@@ -4399,3 +4399,5 @@ window.STUDY_ITEMS.push(...[
     "body": "Dry mouth, cough, or throat irritation.\n\nMemory hook: Ipratropium is the inhaled partner; keep the mist out of eyes."
   }
 ]);
+
+window.STUDY_ITEMS.push({"id": "primary-assessment-course-diagram", "type": "diagram", "title": "Primary Assessment Flow Chart \u00b7 Course resource", "topic": "Primary assessment", "domain": "Primary Assessment", "image": "/resources/primary-assessment-original.png", "practice": true, "source": "Supplied primary assessment course chart", "body": "Your original course diagram. Select the image to open it at full size, or practice by placing 20 labels in its blank spaces. Course-specific oxygen thresholds and Code 3 instructions require current local-protocol context."});

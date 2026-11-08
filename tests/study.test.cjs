@@ -1,8 +1,8 @@
 const fs=require('node:fs');const vm=require('node:vm');const assert=require('node:assert/strict');
-const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,265);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
+const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,266);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
 vm.runInNewContext(fs.readFileSync('pharmacology.js','utf8'),dataContext);
 const nodes=new Map();function element(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',className:'',classList:{toggle(){}},focus(){},scrollIntoView(){}});return nodes.get(id)}
-const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
+const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('assessment.js','utf8'),context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
 function run(source){return vm.runInContext(source,context)}
 assert(nodes.get('#app').innerHTML.includes('Make your next study session count.'));
 // Shuffling retains the original answer index even when the labels change.
@@ -37,3 +37,14 @@ run("navigate('pharm')");assert(nodes.get('#app').innerHTML.includes('Correction
 assert(pharm.find(x=>x.id==='pharm-glucose-card-0').body.includes('grams, not mg'));
 assert(pharm.find(x=>x.id==='pharm-nitroglycerin-card-5').body.includes('rather than increasing'));
 console.log('Passed: all nine drug profiles, 63 flashcards, 63 questions, medication/category filtering, scoring, and chart corrections.');
+
+// Diagram placement supports selection, replacement, clearing, scoring, and reset.
+run("session=null;navigate('assessment')");assert.equal(run('ASSESSMENT_STEPS.length'),20);assert(nodes.get('#app').innerHTML.includes('Answer bank'));
+run("selectAssessment('pre');placeAssessment('scene')");assert.equal(run("assessmentState.placements.scene"),'pre');run('checkAssessment()');assert.equal(run('assessmentState.checked'),true);assert(nodes.get('#app').innerHTML.includes('0/20 correct'));
+run("placeAssessment('pre','pre')");assert.equal(run("assessmentState.placements.pre"),'pre');assert.equal(run("assessmentState.placements.scene"),undefined);
+run("placeAssessment('pre')");assert.equal(run("assessmentState.placements.pre"),undefined);
+run('revealAssessment()');assert.equal(run('Object.keys(assessmentState.placements).length'),20);assert.equal(run('assessmentState.revealed'),true);
+run('resetAssessment()');assert.equal(run('Object.keys(assessmentState.placements).length'),0);assert.equal(run('assessmentState.checked'),false);
+run("dropAssessment({preventDefault(){},dataTransfer:{getData(){return 'invalid'}}},'pre')");assert.equal(run('Object.keys(assessmentState.placements).length'),0);
+run("dropAssessment({preventDefault(){},dataTransfer:{getData(){return 'pre'}}},'pre')");assert.equal(run('assessmentState.placements.pre'),'pre');
+console.log('Passed: 20 diagram blanks, placement/return/move, answer checking, reveal/reset, and drag payload validation.');

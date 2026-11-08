@@ -35,3 +35,6 @@ A separate 28-question review from supplied study notes is available at `/#airwa
 
 ## Pharmacology memory lab
 `/#pharm` provides nine medication profiles, 63 flashcards, and 63 review questions from the uploaded chart. Dedicated routes: `/#pharm-cards`, `/#pharm-quiz`, `/#pharm-notes`. Medication/category filters isolate recall topics. Glucose units, aspirin arithmetic, nitroglycerin action, product-specific dosing, and scope statements have explicit corrections/context. These are course study materials, not a complete formulary or standing orders. Total: 265 study items, 176 questions.
+
+## Primary assessment diagram
+The original course chart is available in Diagrams and at `/resources/primary-assessment-original.png`. `/#assessment` provides a 20-blank overlay exercise with drag/drop, tap/keyboard selection, checking, reveal, return-to-bank, and shuffle/reset. The original remains intact. Its oxygen threshold and transport wording are labeled course-specific rather than universal clinical rules.
