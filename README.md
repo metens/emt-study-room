@@ -47,3 +47,5 @@ The original course chart is available in Diagrams and at `/resources/primary-as
 
 ## Types of shock
 `/#shock` explains hypovolemic, cardiogenic, obstructive, and distributive shock with causes, signs, and distinguishing context. `/#shock-identify` and `/#shock-signs` each offer eight questions with explanations and missed-only retry. Distributive examples include sepsis, anaphylaxis, and neurogenic shock. Signs overlap and are not diagnostic rules.
+
+ECG practice now uses free coordinates rather than target circles. All ten electrode labels can be dragged from the bank or repositioned on the body, with tap and keyboard alternatives. Chest placement uses approximate landmark tolerance and limb placement accepts regions along the appropriate limbs. Positions do not snap; correctness appears only after checking.

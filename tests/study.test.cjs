@@ -60,15 +60,18 @@ run('resetHistory()');assert.equal(run('Object.keys(historyRound().placed).lengt
 console.log('Passed: SAMPLE/OPQRST matching, move/return, checking, reset, separate rounds, and cross-set drag validation.');
 
 run("session=null;navigate('ecg')");assert.equal(run('ECG_ELECTRODES.length'),10);assert.equal(run('ecgScore().positions'),0);
-run("colorEcg('RA','white');selectEcg('RA');placeEcg('LA');checkEcg()");assert.equal(run('ecgScore().positions'),0);assert.equal(run('ecgScore().colors'),1);
-run("placeEcg('RA','RA')");assert.equal(run('ecgState.placed.LA'),undefined);assert.equal(run('ecgScore().positions'),1);
+run("colorEcg('RA','white');placeEcgAt('RA','limbs',296,340);checkEcg()");assert.equal(run('ecgScore().positions'),0);assert.equal(run('ecgScore().colors'),1);
+run("placeEcgAt('RA','limbs',90,250)");assert.equal(run('ecgScore().positions'),1);assert.equal(run('Object.keys(ecgState.placed).length'),1);
+run("placeEcgAt('RA','limbs',64,340)");assert.equal(run('ecgScore().positions'),1);
+run("placeEcgAt('V1','chest',247,247)");assert.equal(run('ecgState.placed.V1.x'),247);assert.equal(run('ecgState.placed.V1.y'),247);assert.equal(run('ecgScore().positions'),2);
+run("placeEcgAt('V1','chest',400,100)");assert.equal(run('ecgScore().positions'),1);
+run("placeEcgAt('LA','limbs',275,270);placeEcgAt('LL','limbs',214,450);placeEcgAt('RL','limbs',145,480)");assert.equal(run('ecgScore().positions'),4);
 run('revealEcg()');assert.equal(run('ecgScore().positions'),10);assert.equal(run('ecgScore().colors'),10);
 run("setEcgScheme('iec')");assert.equal(run('ecgScore().positions'),10);assert(run('ecgScore().colors<10'));run('revealEcg()');assert.equal(run('ecgScore().colors'),10);
-assert.equal(run("ECG_ELECTRODES.find(e=>e.id==='V4').y"),run("ECG_ELECTRODES.find(e=>e.id==='V6').y"));
-assert.equal(run("ECG_ELECTRODES.find(e=>e.id==='V3').x"),(run("ECG_ELECTRODES.find(e=>e.id==='V2').x")+run("ECG_ELECTRODES.find(e=>e.id==='V4').x"))/2);
-run('resetEcg()');assert.equal(run('Object.keys(ecgState.placed).length'),0);assert.equal(run('Object.keys(ecgState.colors).length'),0);
-run("dropEcg({preventDefault(){},dataTransfer:{getData(){return 'sample:s'}}},'RA')");assert.equal(run('ecgScore().positions'),0);
-console.log('Passed: 10 ECG electrodes, color/position scoring, placement moves, AHA/IEC keys, V3 midpoint, V4–V6 alignment, and reset.');
+run('resetEcg()');assert.equal(run('Object.keys(ecgState.placed).length'),0);assert.equal(run('Object.keys(ecgState.colors).length'),0);assert(!nodes.get('#app').innerHTML.includes('ecg-target'));
+run("placeEcgAt('bogus','limbs',100,100);placeEcgAt('RA','chest',NaN,100)");assert.equal(run('Object.keys(ecgState.placed).length'),0);
+console.log('Passed: free ECG coordinates, movable limb regions, unsnapped chest placement, incorrect-position checks, AHA/IEC colors, blank reset, and invalid-input rejection.');
+
 
 run("session=null;navigate('shock')");assert(nodes.get('#app').innerHTML.includes('Hypovolemic shock'));assert(nodes.get('#app').innerHTML.includes('Distributive shock'));
 for(const set of ['shock-identify','shock-signs']){run(`navigate('${set}')`);assert.equal(run('view'),'quiz');assert.equal(run("filtered('question').length"),8);run("document.querySelector('#qcount').value='8';startSession();session.questions.forEach((q,i)=>{session.answers[i]=q.correct});finish()");assert.equal(run('state.attempts.at(-1).score'),100);run('session=null');}
