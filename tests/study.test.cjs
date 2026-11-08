@@ -1,5 +1,5 @@
 const fs=require('node:fs');const vm=require('node:vm');const assert=require('node:assert/strict');
-const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,102);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
+const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,130);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
 const nodes=new Map();function element(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',className:'',classList:{toggle(){}},focus(){},scrollIntoView(){}});return nodes.get(id)}
 const stored=new Map();const context={window:{STUDY_ITEMS:items,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
 function run(source){return vm.runInContext(source,context)}
@@ -20,3 +20,10 @@ run("document.querySelector('#qcount').value='70';startSession()");assert.equal(
 run("session.questions.forEach((q,i)=>{session.answers[i]=q.correct});session.answers[0]=(session.questions[0].correct+1)%4;finish();reviewMissed()");assert.equal(run('session.questions.length'),1);assert.equal(run('session.mode'),'quiz');
 run("session=null;navigate('quiz');selectedSet='starter'");assert.equal(run("filtered('question').length"),15);
 console.log('Passed: 70-question course coverage, dedicated test selection, full-session scoring, missed-only retry, starter-bank isolation.');
+
+const review=items.filter(x=>x.set==='airway-review');assert.equal(review.length,28);assert.deepEqual(Array.from(review,x=>x.sourceQuestion),Array.from({length:28},(_,i)=>i+1));
+run("session=null;navigate('airway-review')");assert.equal(run('view'),'quiz');assert.equal(run("filtered('question').length"),28);assert(nodes.get('#listing').innerHTML.includes('28 · full set'));
+run("document.querySelector('#qcount').value='28';startSession();session.questions.forEach((q,i)=>{session.answers[i]=q.correct});finish()");assert.equal(run('state.attempts.at(-1).score'),100);assert.equal(run('state.attempts.at(-1).answers.length'),28);
+assert(review.find(x=>x.sourceQuestion===17).options[review.find(x=>x.sourceQuestion===17).correct].includes('no suspected head or neck trauma'));
+assert(review.find(x=>x.sourceQuestion===22).title.includes('no gag reflex'));
+console.log('Passed: 28-question review isolation, complete numbering, full-round scoring, and corrected trauma/OPA wording.');

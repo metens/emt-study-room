@@ -29,3 +29,6 @@ Run `node --check app.js` and `node tests/study.test.cjs`. No dependency install
 
 ## Airway & Respiration course review
 70 adapted questions from supplied course screenshots, numbered 1–70, are available at `/#airway-test` (timed) and `/#airway-quiz` (immediate feedback). The full bank now has 85 questions and 102 study items. Choices and question order are shuffled; missed questions can be retried. Source images and prior grades are not published. Older or ambiguous clinical statements were revised, with course-specific equipment conventions labeled.
+
+## Airway Basics & Suction review
+A separate 28-question review from supplied study notes is available at `/#airway-review`. The bank now contains 113 questions and 130 study items. Items 17, 19, 22, and 25 clarify trauma positioning, drainage, absence of gag reflex for an OPA, and exposure-based PPE.

@@ -1696,3 +1696,515 @@ window.STUDY_ITEMS.push(...[
     "source": "Adapted from supplied course images · Question 70"
   }
 ]);
+
+// Second review set supplied as study notes.
+window.STUDY_ITEMS.push(...[
+  {
+    "id": "airway-review-01",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 1,
+    "title": "Vomiting or retching when something touches the back of the pharynx demonstrates which reflex?",
+    "options": [
+      "The pupillary reflex",
+      "The patellar reflex",
+      "The cough reflex only",
+      "The gag reflex"
+    ],
+    "correct": 3,
+    "body": "The gag reflex can cause retching or vomiting when the posterior pharynx is stimulated. An intact gag reflex makes an OPA inappropriate.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 1"
+  },
+  {
+    "id": "airway-review-02",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 2,
+    "title": "Which structure is part of the lower airway?",
+    "options": [
+      "Uvula",
+      "Nasal cavity",
+      "Mainstem bronchus",
+      "Pharynx"
+    ],
+    "correct": 2,
+    "body": "The trachea, mainstem bronchi, bronchioles, and alveoli are parts of the lower airway.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 2"
+  },
+  {
+    "id": "airway-review-03",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 3,
+    "title": "What is the ridge where the trachea divides into the right and left mainstem bronchi called?",
+    "options": [
+      "Glottis",
+      "Carina",
+      "Epiglottis",
+      "Soft palate"
+    ],
+    "correct": 1,
+    "body": "The carina is the ridge at the tracheal bifurcation into the right and left mainstem bronchi.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 3"
+  },
+  {
+    "id": "airway-review-04",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 4,
+    "title": "Which structure lies just posterior to the trachea?",
+    "options": [
+      "Esophagus",
+      "Sternum",
+      "Thyroid cartilage",
+      "Nasal septum"
+    ],
+    "correct": 0,
+    "body": "The esophagus, which carries food toward the stomach, lies behind the trachea.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 4"
+  },
+  {
+    "id": "airway-review-05",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 5,
+    "title": "Which small airway structures are proximal to the alveoli?",
+    "options": [
+      "Mainstem bronchi only",
+      "Vocal cords",
+      "Pharynx",
+      "Bronchioles"
+    ],
+    "correct": 3,
+    "body": "The airways branch into smaller bronchioles before reaching the alveolar region. Alveoli are the gas-exchange sacs.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 5"
+  },
+  {
+    "id": "airway-review-06",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 6,
+    "title": "What is contraction of the smooth muscle lining the bronchial passages called?",
+    "options": [
+      "Diffusion",
+      "Perfusion",
+      "Bronchoconstriction",
+      "Bronchodilation"
+    ],
+    "correct": 2,
+    "body": "Bronchoconstriction narrows bronchial passages as airway smooth muscle contracts, increasing resistance to airflow.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 6"
+  },
+  {
+    "id": "airway-review-07",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 7,
+    "title": "What is the most common cause of upper-airway obstruction in an unconscious patient?",
+    "options": [
+      "The esophagus",
+      "The tongue",
+      "The carina",
+      "The diaphragm"
+    ],
+    "correct": 1,
+    "body": "Loss of muscle tone and relaxation of the jaw allow the tongue and other soft tissue to obstruct the pharynx.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 7"
+  },
+  {
+    "id": "airway-review-08",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 8,
+    "title": "Which process contributes to the serious airflow limitation seen in asthma?",
+    "options": [
+      "Bronchoconstriction",
+      "Widening of all lower airways",
+      "Increased airway diameter from smooth-muscle relaxation",
+      "Opening of the esophagus"
+    ],
+    "correct": 0,
+    "body": "Asthma involves lower-airway narrowing, including bronchoconstriction. Inflammation and mucus can also contribute to airflow obstruction.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 8"
+  },
+  {
+    "id": "airway-review-09",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 9,
+    "title": "A patient smiles and effortlessly says, “Thank you for coming.” What does this tell you about her airway?",
+    "options": [
+      "It will remain open throughout transport",
+      "Her oxygen saturation must be normal",
+      "She cannot have any respiratory illness",
+      "It is open and she can move air right now"
+    ],
+    "correct": 3,
+    "body": "Effortless speech demonstrates airflow through an open airway at that moment. Continue assessing breathing and watching for change.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 9"
+  },
+  {
+    "id": "airway-review-10",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 10,
+    "title": "A restaurant patron clutches his throat, cannot speak, and appears unable to breathe. How should you classify the airway?",
+    "options": [
+      "Adequate because he can shake his head",
+      "Normal unless he becomes unconscious",
+      "Inadequate, with signs of severe obstruction",
+      "Adequate because he is standing"
+    ],
+    "correct": 2,
+    "body": "Inability to speak or breathe suggests severe foreign-body airway obstruction and requires immediate action according to age-appropriate training.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 10"
+  },
+  {
+    "id": "airway-review-11",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 11,
+    "title": "Which sound most strongly suggests liquid in the airway?",
+    "options": [
+      "Wheezing",
+      "Gurgling",
+      "Snoring",
+      "Stridor"
+    ],
+    "correct": 1,
+    "body": "Gurgling suggests liquid such as blood, vomit, or secretions in the airway and calls for prompt assessment and clearing as indicated.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 11"
+  },
+  {
+    "id": "airway-review-12",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 12,
+    "title": "Which patient can have an open airway now but is at high risk of worsening airway compromise?",
+    "options": [
+      "A house-fire survivor with facial burns and black, sooty sputum",
+      "An alert patient with an isolated ankle injury and normal breathing",
+      "A patient with a small finger cut and normal speech",
+      "A comfortable patient with normal air movement and no airway exposure"
+    ],
+    "correct": 0,
+    "body": "Facial burns and sooty sputum raise concern for inhalation injury. Airway swelling can progress, so reassess frequently and obtain appropriate support.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 12"
+  },
+  {
+    "id": "airway-review-13",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 13,
+    "title": "Which conscious patient needs close reassessment for possible airway or breathing compromise despite an open airway?",
+    "options": [
+      "A patient with effortless breathing and normal speech",
+      "A patient with equal normal breath sounds and no distress",
+      "A patient with normal air movement and no breathing complaint",
+      "A patient with diminished lung sounds and nasal flaring"
+    ],
+    "correct": 3,
+    "body": "Diminished lung sounds and nasal flaring are warning signs. They indicate possible impaired airflow or increased work of breathing; they do not by themselves prove an upper-airway obstruction.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 13"
+  },
+  {
+    "id": "airway-review-14",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 14,
+    "title": "A child has retractions, nasal flaring, and a decreased level of consciousness. What is the best assessment?",
+    "options": [
+      "Anaphylaxis proven by these findings alone",
+      "An adequate airway and ventilation because some effort is visible",
+      "Serious airway or breathing compromise requiring immediate assessment and support",
+      "Normal breathing for a tired child"
+    ],
+    "correct": 2,
+    "body": "These findings suggest serious respiratory compromise and possible respiratory failure. The supplied answer calls this an inadequate airway; assess both airway patency and ventilation rather than assuming a specific cause.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 14"
+  },
+  {
+    "id": "airway-review-15",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 15,
+    "title": "Which auscultation finding should raise concern for impaired airflow?",
+    "options": [
+      "Unchanged normal breath sounds without distress",
+      "Diminished breath sounds",
+      "Equal, clear breath sounds with good air movement",
+      "Normal vesicular sounds throughout"
+    ],
+    "correct": 1,
+    "body": "Diminished breath sounds can indicate reduced air movement and warrant assessment of airway, breathing, and other causes. They do not identify a specific obstruction by themselves.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Supplied airway review notes · Question 15"
+  },
+  {
+    "id": "airway-review-16",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 16,
+    "title": "Which maneuver should a trained rescuer initially use to open an unconscious patient’s airway when spinal injury is suspected?",
+    "options": [
+      "Jaw thrust while limiting spinal movement",
+      "Forceful neck hyperextension",
+      "Wait for spinal imaging",
+      "Apply a collar instead of opening the airway"
+    ],
+    "correct": 0,
+    "body": "Use an initial jaw thrust in suspected head or neck trauma. If jaw thrust and appropriate adjuncts fail, use the maneuvers necessary to open the airway; ventilation takes priority.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 16",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-review-17",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 17,
+    "title": "For which patient is a head-tilt, chin-lift most appropriate as the initial airway-opening maneuver?",
+    "options": [
+      "An adult found bruised at the base of stairs after a possible fall",
+      "An unconscious motorcyclist after a collision",
+      "An unconscious patient after a significant diving injury",
+      "An unresponsive adult with a medical illness and no suspected head or neck trauma"
+    ],
+    "correct": 3,
+    "body": "Correction to supplied Q17: an adult found bruised at the base of stairs may have spinal trauma, so that scenario favors an initial jaw thrust. Head-tilt, chin-lift is appropriate initially when head or neck trauma is not suspected; it can also be necessary if other airway-opening measures fail.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 17",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-review-18",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 18,
+    "title": "Which patient should initially have the airway opened with a jaw-thrust maneuver?",
+    "options": [
+      "A comfortable patient with an isolated finger injury",
+      "A patient who needs no airway-opening intervention",
+      "An unconscious trauma patient with suspected spinal injury",
+      "An alert patient speaking normally with no trauma"
+    ],
+    "correct": 2,
+    "body": "For suspected head or neck trauma, begin with a jaw thrust while minimizing spinal movement. Reassess whether the maneuver actually opens the airway.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 18",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-review-19",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 19,
+    "title": "When vomit or loose visible material must drain from a patient’s mouth and spinal injury is suspected, what may be necessary?",
+    "options": [
+      "Keep the patient supine regardless of airway contamination",
+      "A coordinated log roll to the side while maintaining spinal alignment",
+      "A blind finger sweep deep into the pharynx",
+      "Force fluid deeper into the airway"
+    ],
+    "correct": 1,
+    "body": "Clarified from the supplied explanation: a coordinated roll to the side can allow drainage while limiting spinal movement. Suction as needed and remove only visible, accessible solid material; avoid blind finger sweeps.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 19"
+  },
+  {
+    "id": "airway-review-20",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 20,
+    "title": "Which external measurement is commonly used to estimate NPA length?",
+    "options": [
+      "Nostril or tip of the nose to the earlobe, according to the device and protocol",
+      "Nostril to the center of the forehead",
+      "Corner of the mouth to the sternum",
+      "Earlobe to the shoulder"
+    ],
+    "correct": 0,
+    "body": "The supplied course uses the nose or nostril to the tip of the earlobe; some training uses the angle of the jaw. Select and verify size using manufacturer instructions and local protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 20"
+  },
+  {
+    "id": "airway-review-21",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 21,
+    "title": "Which statement is true of both an OPA and an NPA?",
+    "options": [
+      "They seal the trachea against aspiration",
+      "They replace assisted ventilation when breathing is absent",
+      "They remove all need for manual airway positioning",
+      "They help keep upper-airway soft tissue from obstructing airflow"
+    ],
+    "correct": 3,
+    "body": "Both adjuncts help maintain upper-airway patency, particularly by limiting soft-tissue obstruction. Neither seals the trachea or reliably prevents aspiration, and neither guarantees adequate ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 21"
+  },
+  {
+    "id": "airway-review-22",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 22,
+    "title": "A 19-year-old remains unresponsive after a seizure. You have manually opened and cleared her airway; she has no gag reflex. Which basic airway adjunct may be appropriate?",
+    "options": [
+      "OPA even if gagging begins",
+      "An advanced airway before considering any basic measures",
+      "Oropharyngeal airway",
+      "Nasal cannula as an airway adjunct"
+    ],
+    "correct": 2,
+    "body": "Clarified: unresponsiveness alone is not enough to select an OPA; the gag reflex must be absent. Open the airway manually first, suction if needed, and select an appropriate adjunct. An OPA maintains patency but does not protect against aspiration.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 22"
+  },
+  {
+    "id": "airway-review-23",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 23,
+    "title": "When is suctioning indicated?",
+    "options": [
+      "To remove every large solid object with a small catheter",
+      "When secretions, blood, or vomit interfere with airway patency",
+      "Only when the patient is unresponsive",
+      "Instead of manually opening every airway"
+    ],
+    "correct": 1,
+    "body": "Suction removes liquid contamination and secretions. It can be necessary in responsive or unresponsive patients, does not replace airway positioning, and is not the solution for every solid obstruction.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 23"
+  },
+  {
+    "id": "airway-review-24",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 24,
+    "title": "Which intervention removes a liquid obstruction from the airway?",
+    "options": [
+      "Suctioning",
+      "A pulse oximeter",
+      "A nasal cannula alone",
+      "A cervical collar"
+    ],
+    "correct": 0,
+    "body": "Suctioning removes blood, vomit, and other liquid material that can obstruct or contaminate the airway.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 24"
+  },
+  {
+    "id": "airway-review-25",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 25,
+    "title": "How should you decide whether a gown is needed when suctioning?",
+    "options": [
+      "A gown is never indicated for suctioning",
+      "Gloves alone protect the eyes, nose, and mouth",
+      "Wear a gown instead of gloves and face protection",
+      "Use exposure-based PPE, including a gown when clothing or skin contamination is anticipated"
+    ],
+    "correct": 3,
+    "body": "Correction to supplied Q25: do not memorize “a gown is not required” as a universal rule. Select PPE for anticipated exposure. Protect eyes, nose, and mouth from splashes, wear gloves, and use a gown when skin or clothing contact with secretions is anticipated; follow additional respiratory precautions when indicated.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 25",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/isolation-precautions/appendix-a-table-4.html"
+  },
+  {
+    "id": "airway-review-26",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 26,
+    "title": "When should suction be applied during catheter withdrawal technique?",
+    "options": [
+      "Only after the catheter is completely outside the mouth",
+      "Continuously for as long as possible",
+      "As you remove the catheter",
+      "Throughout insertion before reaching the secretions"
+    ],
+    "correct": 2,
+    "body": "Insert without applying suction, then apply suction while withdrawing using the appropriate technique and shortest effective pass. Reassess and reoxygenate as indicated.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 26"
+  },
+  {
+    "id": "airway-review-27",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 27,
+    "title": "In the supplied course’s suction-unit equipment check, what minimum vacuum should the system generate when the tubing is clamped?",
+    "options": [
+      "30 L/min, which is a pressure",
+      "300 mmHg",
+      "30 mmHg",
+      "3 mmHg"
+    ],
+    "correct": 1,
+    "body": "The course specifies at least 300 mmHg with the tubing occluded and at least 30 L/min free-air flow. These are equipment capability checks, not universal patient suction-pressure settings; follow device instructions and protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 27"
+  },
+  {
+    "id": "airway-review-28",
+    "type": "question",
+    "set": "airway-review",
+    "sourceQuestion": 28,
+    "title": "How far should a rigid oral suction tip generally be inserted?",
+    "options": [
+      "Only as far as you can see, generally no farther than the base of the tongue",
+      "Blindly until resistance is felt deep in the pharynx",
+      "Through the vocal cords",
+      "As far as the full tubing length allows"
+    ],
+    "correct": 0,
+    "body": "Use the rigid oral tip under direct vision, generally not beyond the base of the tongue. Do not blindly advance it. Flexible catheters and other procedures have different technique and depth requirements.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Supplied airway review notes · Question 28"
+  }
+]);
