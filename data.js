@@ -1,0 +1,429 @@
+window.STUDY_ITEMS = [
+  {
+    "topic": "Foundations",
+    "domain": "Scene Size-Up and Safety",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-note",
+    "type": "note",
+    "title": "Precautions for every patient",
+    "body": "Use standard precautions for all patients. Select PPE for anticipated exposure. Hand hygiene, respiratory hygiene, and appropriate equipment cleaning help prevent infection from spreading."
+  },
+  {
+    "topic": "Foundations",
+    "domain": "Scene Size-Up and Safety",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-card-0",
+    "type": "card",
+    "title": "Who needs standard precautions?",
+    "body": "Every patient."
+  },
+  {
+    "topic": "Foundations",
+    "domain": "Scene Size-Up and Safety",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-card-1",
+    "type": "card",
+    "title": "What guides PPE selection?",
+    "body": "Anticipated exposure and risk assessment."
+  },
+  {
+    "topic": "Foundations",
+    "domain": "Scene Size-Up and Safety",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-q-0",
+    "type": "question",
+    "title": "Standard precautions apply to whom?",
+    "options": [
+      "All patients",
+      "Only febrile patients",
+      "Only known infections",
+      "Only trauma patients"
+    ],
+    "correct": 0,
+    "body": "Infection prevention applies to everyone."
+  },
+  {
+    "topic": "Foundations",
+    "domain": "Scene Size-Up and Safety",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-q-1",
+    "type": "question",
+    "title": "Expected blood splash should guide which decision?",
+    "options": [
+      "Billing code",
+      "PPE selection",
+      "Hospital address",
+      "Patient age"
+    ],
+    "correct": 1,
+    "body": "Match protection to the exposure risk."
+  },
+  {
+    "topic": "Foundations",
+    "domain": "Operations",
+    "source": "CDC · Standard Precautions",
+    "sourceUrl": "https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html",
+    "id": "precautions-q-2",
+    "type": "question",
+    "title": "Between patients, reusable equipment needs appropriate…",
+    "options": [
+      "Storage only",
+      "Decoration",
+      "Cleaning and disinfection",
+      "Relabeling only"
+    ],
+    "correct": 2,
+    "body": "Equipment can spread infection."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-note",
+    "type": "note",
+    "title": "Recognizing breathing difficulty",
+    "body": "Sudden breathing difficulty can be an emergency. Look for rapid breathing, unusual chest movement, difficulty speaking, abnormal breathing sounds, or confusion. Do not assume anxiety is the only cause."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-card-0",
+    "type": "card",
+    "title": "What does dyspnea mean?",
+    "body": "Breathing difficulty or shortness of breath."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-card-1",
+    "type": "card",
+    "title": "Can confusion accompany breathing difficulty?",
+    "body": "Yes. Mental status changes can be a warning sign."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-q-0",
+    "type": "question",
+    "title": "Which finding suggests breathing difficulty?",
+    "options": [
+      "Unlabored speech",
+      "Difficulty speaking",
+      "Normal comfortable breathing",
+      "No symptoms"
+    ],
+    "correct": 1,
+    "body": "Trouble speaking can accompany respiratory distress."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-q-1",
+    "type": "question",
+    "title": "Sudden unexplained breathlessness warrants…",
+    "options": [
+      "Waiting for tomorrow",
+      "Ignoring it",
+      "Prompt assessment",
+      "Exercise testing"
+    ],
+    "correct": 2,
+    "body": "Breathing difficulty may be a medical emergency."
+  },
+  {
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Breathing difficulties",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000007.htm",
+    "id": "breathing-q-2",
+    "type": "question",
+    "title": "A wheezing patient is also confused. The confusion is…",
+    "options": [
+      "Always unrelated",
+      "Potentially significant",
+      "Proof of intoxication",
+      "Reassuring"
+    ],
+    "correct": 1,
+    "body": "Confusion can accompany breathing difficulty."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-note",
+    "type": "note",
+    "title": "Shock: think inadequate blood flow",
+    "body": "Shock means circulation cannot adequately supply tissues. Causes include low blood volume, cardiac problems, obstruction, and changes in vessel tone. Confusion, cool clammy skin, and a weak rapid pulse can occur."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-card-0",
+    "type": "card",
+    "title": "Hypovolemic shock involves what problem?",
+    "body": "Insufficient circulating blood volume."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-card-1",
+    "type": "card",
+    "title": "Cardiogenic shock involves what problem?",
+    "body": "Impaired heart function."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-q-0",
+    "type": "question",
+    "title": "Severe blood loss most directly causes which shock type?",
+    "options": [
+      "Cardiogenic",
+      "Hypovolemic",
+      "Septic",
+      "Neurogenic"
+    ],
+    "correct": 1,
+    "body": "Blood loss reduces circulating volume."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Secondary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-q-1",
+    "type": "question",
+    "title": "Which pattern raises concern for shock?",
+    "options": [
+      "Warm comfortable patient",
+      "Confusion with cool clammy skin",
+      "Isolated itchy skin",
+      "Normal examination"
+    ],
+    "correct": 1,
+    "body": "Assess concerning findings together."
+  },
+  {
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-q-2",
+    "type": "question",
+    "title": "Heart pump failure is associated with…",
+    "options": [
+      "Cardiogenic shock",
+      "Hypovolemic shock",
+      "Septic shock",
+      "Anaphylactic shock"
+    ],
+    "correct": 0,
+    "body": "Cardiogenic shock arises from heart dysfunction."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Patient Treatment and Transport",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-note",
+    "type": "note",
+    "title": "Recognize serious bleeding",
+    "body": "Continuous or spurting bleeding can be life-threatening. Apply firm direct pressure. Use a tourniquet for life-threatening limb bleeding when trained, following your course and local protocol. Continue monitoring the patient."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Patient Treatment and Transport",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-card-0",
+    "type": "card",
+    "title": "What bleeding pattern is concerning?",
+    "body": "Continuous flow or spurting."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Patient Treatment and Transport",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-card-1",
+    "type": "card",
+    "title": "Remove an embedded object to control bleeding?",
+    "body": "No. Apply pressure around it."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Primary Assessment",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-q-0",
+    "type": "question",
+    "title": "Which pattern suggests life-threatening bleeding?",
+    "options": [
+      "Small stopped scrape",
+      "Continuous heavy flow",
+      "Old healed bruise",
+      "Dry scab"
+    ],
+    "correct": 1,
+    "body": "Flow and volume help identify severity."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Patient Treatment and Transport",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-q-1",
+    "type": "question",
+    "title": "Direct pressure should be…",
+    "options": [
+      "Firm and steady",
+      "Brief and intermittent",
+      "Only near the wound",
+      "Avoided for bleeding"
+    ],
+    "correct": 0,
+    "body": "Apply pressure directly over the wound."
+  },
+  {
+    "topic": "Trauma",
+    "domain": "Patient Treatment and Transport",
+    "source": "American Red Cross · Life-threatening external bleeding",
+    "sourceUrl": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "id": "bleeding-q-2",
+    "type": "question",
+    "title": "An object is embedded in a bleeding wound. Pressure goes…",
+    "options": [
+      "Around the object",
+      "On its tip",
+      "Nowhere",
+      "After removing it"
+    ],
+    "correct": 0,
+    "body": "Removing an object may worsen bleeding."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Operations",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-note",
+    "type": "note",
+    "title": "The work around patient care",
+    "body": "Operations includes equipment readiness, supplies, documentation, and responder well-being. Secondary assessment develops the history and focused examination, then revisits findings and interventions."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Operations",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-card-0",
+    "type": "card",
+    "title": "What belongs in operations study?",
+    "body": "Equipment, supplies, documentation, and responder well-being."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Operations",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-card-1",
+    "type": "card",
+    "title": "Why reassess?",
+    "body": "Identify changes after earlier findings and interventions."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Operations",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-q-0",
+    "type": "question",
+    "title": "A pre-shift equipment check fits which domain?",
+    "options": [
+      "Operations",
+      "Secondary assessment",
+      "Primary assessment",
+      "Treatment only"
+    ],
+    "correct": 0,
+    "body": "Readiness includes functioning equipment."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Secondary Assessment",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-q-1",
+    "type": "question",
+    "title": "Focused history-taking fits which domain?",
+    "options": [
+      "Operations",
+      "Scene safety",
+      "Secondary assessment",
+      "Transport only"
+    ],
+    "correct": 2,
+    "body": "History helps refine ongoing care."
+  },
+  {
+    "topic": "EMS operations",
+    "domain": "Secondary Assessment",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "operations-q-2",
+    "type": "question",
+    "title": "Checking how a patient changed after an intervention is…",
+    "options": [
+      "Dispatch",
+      "Reassessment",
+      "Billing",
+      "Inventory"
+    ],
+    "correct": 1,
+    "body": "Revisit findings and response to care."
+  },
+  {
+    "type": "diagram",
+    "source": "NREMT · EMT test plan (2025)",
+    "sourceUrl": "https://nremt.org/admin/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+    "id": "assessment-map",
+    "title": "The assessment domains",
+    "topic": "Patient assessment",
+    "domain": "Primary Assessment",
+    "body": "A study map, not a rigid treatment algorithm. Address immediate threats as encountered; reassessment continues throughout care.",
+    "image": "/diagrams/assessment.svg"
+  },
+  {
+    "type": "diagram",
+    "source": "MedlinePlus · Shock",
+    "sourceUrl": "https://medlineplus.gov/ency/article/000039.htm",
+    "id": "shock-map",
+    "title": "Shock: a circulation concept map",
+    "topic": "Shock & resuscitation",
+    "domain": "Primary Assessment",
+    "body": "Different mechanisms can reduce effective circulation.",
+    "image": "/diagrams/shock.svg"
+  }
+];
