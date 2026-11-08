@@ -1,7 +1,8 @@
 const fs=require('node:fs');const vm=require('node:vm');const assert=require('node:assert/strict');
-const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,130);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
+const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,265);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
+vm.runInNewContext(fs.readFileSync('pharmacology.js','utf8'),dataContext);
 const nodes=new Map();function element(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',className:'',classList:{toggle(){}},focus(){},scrollIntoView(){}});return nodes.get(id)}
-const stored=new Map();const context={window:{STUDY_ITEMS:items,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
+const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
 function run(source){return vm.runInContext(source,context)}
 assert(nodes.get('#app').innerHTML.includes('Make your next study session count.'));
 // Shuffling retains the original answer index even when the labels change.
@@ -27,3 +28,12 @@ run("document.querySelector('#qcount').value='28';startSession();session.questio
 assert(review.find(x=>x.sourceQuestion===17).options[review.find(x=>x.sourceQuestion===17).correct].includes('no suspected head or neck trauma'));
 assert(review.find(x=>x.sourceQuestion===22).title.includes('no gag reflex'));
 console.log('Passed: 28-question review isolation, complete numbering, full-round scoring, and corrected trauma/OPA wording.');
+
+const pharm=items.filter(x=>x.set==='pharmacology');assert.equal(pharm.filter(x=>x.type==='card').length,63);assert.equal(pharm.filter(x=>x.type==='question').length,63);assert.equal(pharm.filter(x=>x.type==='note').length,9);
+run("session=null;navigate('pharm-cards')");assert.equal(run('deck.length'),63);run("studyDrug('glucose')");assert.equal(run('deck.length'),7);assert(run("deck.every(x=>x.drug==='Oral glucose')"));
+run("navigate('pharm-quiz');document.querySelector('#qcount').value='63';startSession();session.questions.forEach((q,i)=>{session.answers[i]=q.correct});finish()");assert.equal(run('state.attempts.at(-1).score'),100);assert.equal(run('state.attempts.at(-1).answers.length'),63);
+run("session=null;navigate('pharm-quiz');fieldFilter='Route';updateList()");assert.equal(run("filtered('question').length"),9);
+run("navigate('pharm')");assert(nodes.get('#app').innerHTML.includes('Corrections and context'));
+assert(pharm.find(x=>x.id==='pharm-glucose-card-0').body.includes('grams, not mg'));
+assert(pharm.find(x=>x.id==='pharm-nitroglycerin-card-5').body.includes('rather than increasing'));
+console.log('Passed: all nine drug profiles, 63 flashcards, 63 questions, medication/category filtering, scoring, and chart corrections.');

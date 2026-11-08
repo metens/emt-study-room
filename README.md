@@ -32,3 +32,6 @@ Run `node --check app.js` and `node tests/study.test.cjs`. No dependency install
 
 ## Airway Basics & Suction review
 A separate 28-question review from supplied study notes is available at `/#airway-review`. The bank now contains 113 questions and 130 study items. Items 17, 19, 22, and 25 clarify trauma positioning, drainage, absence of gag reflex for an OPA, and exposure-based PPE.
+
+## Pharmacology memory lab
+`/#pharm` provides nine medication profiles, 63 flashcards, and 63 review questions from the uploaded chart. Dedicated routes: `/#pharm-cards`, `/#pharm-quiz`, `/#pharm-notes`. Medication/category filters isolate recall topics. Glucose units, aspirin arithmetic, nitroglycerin action, product-specific dosing, and scope statements have explicit corrections/context. These are course study materials, not a complete formulary or standing orders. Total: 265 study items, 176 questions.
