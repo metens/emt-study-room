@@ -2,7 +2,7 @@ const fs=require('node:fs');const vm=require('node:vm');const assert=require('no
 const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,266);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
 vm.runInNewContext(fs.readFileSync('pharmacology.js','utf8'),dataContext);
 const nodes=new Map();function element(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',className:'',classList:{toggle(){}},focus(){},scrollIntoView(){}});return nodes.get(id)}
-const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('assessment.js','utf8'),context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
+const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('mnemonics.js','utf8'),context);vm.runInContext(fs.readFileSync('assessment.js','utf8'),context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
 function run(source){return vm.runInContext(source,context)}
 assert(nodes.get('#app').innerHTML.includes('Make your next study session count.'));
 // Shuffling retains the original answer index even when the labels change.
@@ -48,3 +48,13 @@ run('resetAssessment()');assert.equal(run('Object.keys(assessmentState.placement
 run("dropAssessment({preventDefault(){},dataTransfer:{getData(){return 'invalid'}}},'pre')");assert.equal(run('Object.keys(assessmentState.placements).length'),0);
 run("dropAssessment({preventDefault(){},dataTransfer:{getData(){return 'pre'}}},'pre')");assert.equal(run('assessmentState.placements.pre'),'pre');
 console.log('Passed: 20 diagram blanks, placement/return/move, answer checking, reveal/reset, and drag payload validation.');
+
+run("session=null;navigate('mnemonics');selectHistory('a');placeHistory('s');checkHistory()");assert(nodes.get('#app').innerHTML.includes('0/6 correct'));
+run("placeHistory('a','a')");assert.equal(run('historyRound().placed.s'),undefined);assert.equal(run('historyRound().placed.a'),'a');
+run("placeHistory('a')");assert.equal(run('historyRound().placed.a'),undefined);
+run('revealHistory()');assert.equal(run('Object.keys(historyRound().placed).length'),6);assert.equal(run('historyRound().revealed'),true);
+run("changeHistoryMode('opqrst')");assert.equal(run('Object.keys(historyRound().placed).length'),0);
+run("dropHistory({preventDefault(){},dataTransfer:{getData(){return 'sample:s'}}},'s')");assert.equal(run('Object.keys(historyRound().placed).length'),0);
+run("dropHistory({preventDefault(){},dataTransfer:{getData(){return 'opqrst:o'}}},'o')");assert.equal(run('historyRound().placed.o'),'o');
+run('resetHistory()');assert.equal(run('Object.keys(historyRound().placed).length'),0);run("changeHistoryMode('sample')");assert.equal(run('Object.keys(historyRound().placed).length'),6);
+console.log('Passed: SAMPLE/OPQRST matching, move/return, checking, reset, separate rounds, and cross-set drag validation.');

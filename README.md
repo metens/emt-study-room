@@ -38,3 +38,6 @@ A separate 28-question review from supplied study notes is available at `/#airwa
 
 ## Primary assessment diagram
 The original course chart is available in Diagrams and at `/resources/primary-assessment-original.png`. `/#assessment` provides a 20-blank overlay exercise with drag/drop, tap/keyboard selection, checking, reveal, return-to-bank, and shuffle/reset. The original remains intact. Its oxygen threshold and transport wording are labeled course-specific rather than universal clinical rules.
+
+## SAMPLE & OPQRST matching
+`/#mnemonics` offers two six-card question-matching activities with drag/drop and tap/keyboard placement, check/reveal, shuffle/reset, and separate in-memory rounds. Questions are adapted from supplied notes, including last ins/outs and prior episodes, with timing and severity clarifications.
