@@ -41,3 +41,6 @@ The original course chart is available in Diagrams and at `/resources/primary-as
 
 ## SAMPLE & OPQRST matching
 `/#mnemonics` offers two six-card question-matching activities with drag/drop and tap/keyboard placement, check/reveal, shuffle/reset, and separate in-memory rounds. Questions are adapted from supplied notes, including last ins/outs and prior episodes, with timing and severity clarifications.
+
+## ECG placement
+`/#ecg` provides original full-body limb and chest-detail schematics for ten electrode targets, drag/drop and tap placement, individual color selects, AHA/IEC modes, separate color and position scoring, references, and reveal/reset. V4–V6 are level; V3 is midway between V2 and V4. Color conventions follow the cited GE reference, including AHA V5 orange.

@@ -2,7 +2,7 @@ const fs=require('node:fs');const vm=require('node:vm');const assert=require('no
 const dataContext={window:{}};vm.runInNewContext(fs.readFileSync('data.js','utf8'),dataContext);const items=dataContext.window.STUDY_ITEMS;assert.equal(items.length,266);assert.equal(new Set(items.map(x=>x.id)).size,items.length);for(const x of items){assert(x.title&&x.body&&x.source);if(x.type==='question'){assert.equal(x.options.length,4);assert(Number.isInteger(x.correct)&&x.correct>=0&&x.correct<4);assert.equal(new Set(x.options).size,4)}if(x.type==='diagram')assert(fs.existsSync('.'+x.image));}
 vm.runInNewContext(fs.readFileSync('pharmacology.js','utf8'),dataContext);
 const nodes=new Map();function element(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',className:'',classList:{toggle(){}},focus(){},scrollIntoView(){}});return nodes.get(id)}
-const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('mnemonics.js','utf8'),context);vm.runInContext(fs.readFileSync('assessment.js','utf8'),context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
+const stored=new Map();const context={window:{STUDY_ITEMS:items,PHARMACOLOGY:dataContext.window.PHARMACOLOGY,addEventListener(){},scrollTo(){}},document:{querySelector:element,querySelectorAll(){return[]}},localStorage:{getItem:k=>stored.get(k)||null,setItem:(k,v)=>stored.set(k,v)},location:{hash:''},history:{replaceState(){}},setInterval(){},confirm:()=>true,Math,Date,Map,JSON,console};vm.createContext(context);vm.runInContext(fs.readFileSync('ecg.js','utf8'),context);vm.runInContext(fs.readFileSync('mnemonics.js','utf8'),context);vm.runInContext(fs.readFileSync('assessment.js','utf8'),context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
 function run(source){return vm.runInContext(source,context)}
 assert(nodes.get('#app').innerHTML.includes('Make your next study session count.'));
 // Shuffling retains the original answer index even when the labels change.
@@ -58,3 +58,14 @@ run("dropHistory({preventDefault(){},dataTransfer:{getData(){return 'sample:s'}}
 run("dropHistory({preventDefault(){},dataTransfer:{getData(){return 'opqrst:o'}}},'o')");assert.equal(run('historyRound().placed.o'),'o');
 run('resetHistory()');assert.equal(run('Object.keys(historyRound().placed).length'),0);run("changeHistoryMode('sample')");assert.equal(run('Object.keys(historyRound().placed).length'),6);
 console.log('Passed: SAMPLE/OPQRST matching, move/return, checking, reset, separate rounds, and cross-set drag validation.');
+
+run("session=null;navigate('ecg')");assert.equal(run('ECG_ELECTRODES.length'),10);assert.equal(run('ecgScore().positions'),0);
+run("colorEcg('RA','white');selectEcg('RA');placeEcg('LA');checkEcg()");assert.equal(run('ecgScore().positions'),0);assert.equal(run('ecgScore().colors'),1);
+run("placeEcg('RA','RA')");assert.equal(run('ecgState.placed.LA'),undefined);assert.equal(run('ecgScore().positions'),1);
+run('revealEcg()');assert.equal(run('ecgScore().positions'),10);assert.equal(run('ecgScore().colors'),10);
+run("setEcgScheme('iec')");assert.equal(run('ecgScore().positions'),10);assert(run('ecgScore().colors<10'));run('revealEcg()');assert.equal(run('ecgScore().colors'),10);
+assert.equal(run("ECG_ELECTRODES.find(e=>e.id==='V4').y"),run("ECG_ELECTRODES.find(e=>e.id==='V6').y"));
+assert.equal(run("ECG_ELECTRODES.find(e=>e.id==='V3').x"),(run("ECG_ELECTRODES.find(e=>e.id==='V2').x")+run("ECG_ELECTRODES.find(e=>e.id==='V4').x"))/2);
+run('resetEcg()');assert.equal(run('Object.keys(ecgState.placed).length'),0);assert.equal(run('Object.keys(ecgState.colors).length'),0);
+run("dropEcg({preventDefault(){},dataTransfer:{getData(){return 'sample:s'}}},'RA')");assert.equal(run('ecgScore().positions'),0);
+console.log('Passed: 10 ECG electrodes, color/position scoring, placement moves, AHA/IEC keys, V3 midpoint, V4–V6 alignment, and reset.');
