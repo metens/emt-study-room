@@ -44,3 +44,6 @@ The original course chart is available in Diagrams and at `/resources/primary-as
 
 ## ECG placement
 `/#ecg` provides original full-body limb and chest-detail schematics for ten electrode targets, drag/drop and tap placement, individual color selects, AHA/IEC modes, separate color and position scoring, references, and reveal/reset. V4–V6 are level; V3 is midway between V2 and V4. Color conventions follow the cited GE reference, including AHA V5 orange.
+
+## Types of shock
+`/#shock` explains hypovolemic, cardiogenic, obstructive, and distributive shock with causes, signs, and distinguishing context. `/#shock-identify` and `/#shock-signs` each offer eight questions with explanations and missed-only retry. Distributive examples include sepsis, anaphylaxis, and neurogenic shock. Signs overlap and are not diagnostic rules.
