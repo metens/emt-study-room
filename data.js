@@ -427,3 +427,1272 @@ window.STUDY_ITEMS = [
     "image": "/diagrams/shock.svg"
   }
 ];
+
+// Dedicated course-image practice set. Choices are randomized by app.js.
+window.STUDY_ITEMS.push(...[
+  {
+    "id": "airway-images-01",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 1,
+    "title": "After your primary assessment, a runner remains short of breath at rest. She is alert, ventilating adequately, and has an SpO₂ of 89%. What is appropriate?",
+    "options": [
+      "Give supplemental oxygen according to protocol",
+      "Delay care until she walks to the aid station",
+      "Treat the oxygen reading as normal",
+      "Give assisted breaths solely because she is short of breath"
+    ],
+    "correct": 0,
+    "body": "Hypoxemia with adequate spontaneous ventilation calls for supplemental oxygen and reassessment. If ventilation becomes inadequate, oxygen alone is insufficient.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 1"
+  },
+  {
+    "id": "airway-images-02",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 2,
+    "title": "Where does the trachea divide into the two mainstem bronchi?",
+    "options": [
+      "Carina",
+      "Alveoli",
+      "Glottic opening",
+      "Bronchioles"
+    ],
+    "correct": 0,
+    "body": "The carina is the ridge at the bifurcation of the trachea into the right and left mainstem bronchi.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 2"
+  },
+  {
+    "id": "airway-images-03",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 3,
+    "title": "An unresponsive adult has a carotid pulse but no breathing or chest rise. What should you suspect?",
+    "options": [
+      "Respiratory arrest",
+      "Normal ventilation",
+      "Isolated hypoglycemia proven by the assessment",
+      "Cardiac arrest with no pulse"
+    ],
+    "correct": 0,
+    "body": "Absent breathing with a pulse indicates respiratory arrest. Open the airway and provide ventilatory support; investigate the cause without delaying care.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 3"
+  },
+  {
+    "id": "airway-images-04",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 4,
+    "title": "Which patient most clearly needs supplemental oxygen after an initial assessment?",
+    "options": [
+      "An alert patient with difficulty breathing and an SpO₂ of 88%",
+      "A comfortable patient with an isolated wrist injury and an SpO₂ of 98%",
+      "A comfortable patient with normal breathing and an SpO₂ of 97%",
+      "A patient with normal breathing and an SpO₂ of 99%"
+    ],
+    "correct": 0,
+    "body": "Treat hypoxemia and reassess oxygenation and ventilation. Choose the delivery device and target according to patient needs and local protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 4"
+  },
+  {
+    "id": "airway-images-05",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 5,
+    "title": "An adult in respiratory arrest has a pulse. How should you ventilate while avoiding excessive ventilation?",
+    "options": [
+      "Give one breath every 6 seconds, enough for visible chest rise",
+      "Give the largest possible breath every 2 seconds",
+      "Ventilate only when the pulse oximeter reading falls",
+      "Squeeze the bag continuously"
+    ],
+    "correct": 0,
+    "body": "Current adult BLS guidance uses 1 breath every 6 seconds (10/min) when a pulse is present. Give enough volume for visible chest rise and avoid excessive rate or volume.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 5 · Clinical guidance update",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-images-06",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 6,
+    "title": "Which sound commonly results from relaxed upper-airway soft tissue partially blocking airflow?",
+    "options": [
+      "Snoring",
+      "Crackles",
+      "Wheezing",
+      "Pleural friction rub"
+    ],
+    "correct": 0,
+    "body": "Snoring in an unresponsive patient suggests partial upper-airway obstruction, often by the tongue. Open and reassess the airway.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 6"
+  },
+  {
+    "id": "airway-images-07",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 7,
+    "title": "How often should you give a rescue breath to an adult with a pulse who is not breathing normally?",
+    "options": [
+      "Every 6 seconds",
+      "Every 12 seconds",
+      "Every 2 seconds",
+      "Every 30 seconds"
+    ],
+    "correct": 0,
+    "body": "One breath every 6 seconds provides 10 breaths per minute. Watch for visible chest rise and reassess the patient.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 7 · Clinical guidance update",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-images-08",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 8,
+    "title": "Why is CPAP inappropriate for an apneic patient?",
+    "options": [
+      "CPAP does not provide the breaths needed when respiratory effort is absent",
+      "CPAP is always delivered without oxygen",
+      "CPAP requires a completely obstructed airway",
+      "CPAP replaces manual ventilation in respiratory arrest"
+    ],
+    "correct": 0,
+    "body": "CPAP supports a spontaneously breathing patient. A patient without effective respiratory effort needs assisted ventilation rather than CPAP alone.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 8"
+  },
+  {
+    "id": "airway-images-09",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 9,
+    "title": "What term describes air moving into and out of the lungs?",
+    "options": [
+      "Ventilation",
+      "Tidal volume",
+      "Internal respiration",
+      "Perfusion"
+    ],
+    "correct": 0,
+    "body": "Ventilation is the mechanical movement of air. Respiration refers to gas exchange, and perfusion is blood flow through tissues.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 9"
+  },
+  {
+    "id": "airway-images-10",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 10,
+    "title": "A child in respiratory distress has a harsh, high-pitched inspiratory sound. Which sound suggests upper-airway narrowing?",
+    "options": [
+      "Stridor",
+      "Rhonchi",
+      "Crackles",
+      "Lower-airway wheezing"
+    ],
+    "correct": 0,
+    "body": "Stridor suggests upper-airway narrowing. Wheezes generally arise in narrowed lower airways; crackles and rhonchi describe other abnormal breath sounds.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 10"
+  },
+  {
+    "id": "airway-images-11",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 11,
+    "title": "How do oxygen and carbon dioxide cross the alveolar-capillary membrane?",
+    "options": [
+      "Simple diffusion",
+      "Active transport requiring ATP",
+      "Oncotic pressure alone",
+      "Osmosis of oxygen molecules"
+    ],
+    "correct": 0,
+    "body": "Gases diffuse down their partial-pressure gradients: oxygen moves toward pulmonary blood and carbon dioxide toward the alveoli.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 11"
+  },
+  {
+    "id": "airway-images-12",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 12,
+    "title": "Which maneuver should you try first to open an unconscious patient’s airway when a cervical spine injury is suspected?",
+    "options": [
+      "Jaw thrust with spinal motion restriction",
+      "Forceful neck hyperextension",
+      "Apply a collar before addressing the airway",
+      "Avoid opening the airway until imaging"
+    ],
+    "correct": 0,
+    "body": "Start with a jaw thrust while limiting spinal movement. If it fails to open the airway, use the measures needed to establish ventilation; airway and oxygenation take priority.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 12 · Clinical guidance update",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-images-13",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 13,
+    "title": "Before placing a nonrebreather mask on a patient, what should you do?",
+    "options": [
+      "Inflate the reservoir bag and check that it stays adequately inflated during inspiration",
+      "Wait until the oxygen cylinder is completely full",
+      "Insert an OPA into every patient",
+      "Wait for the heart rate to return to normal"
+    ],
+    "correct": 0,
+    "body": "Preinflate the reservoir. Adjust oxygen flow as needed within device instructions so the bag does not collapse during inspiration.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 13"
+  },
+  {
+    "id": "airway-images-14",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 14,
+    "title": "An alert 12-year-old reports difficulty breathing. Respirations are 28/min, SpO₂ is 89%, and breathing remains effective. Which description best fits?",
+    "options": [
+      "Respiratory distress requiring treatment and close reassessment",
+      "Respiratory arrest",
+      "Normal breathing because the child can speak",
+      "Definite respiratory failure based only on the respiratory rate"
+    ],
+    "correct": 0,
+    "body": "Increased breathing difficulty with maintained effective ventilation is respiratory distress. Hypoxemia needs treatment. Assess effort, air movement, mental status, and trends for deterioration.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 14"
+  },
+  {
+    "id": "airway-images-15",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 15,
+    "title": "In the supplied course material, an effective suction unit must provide at least what free-air flow and occluded-tubing vacuum?",
+    "options": [
+      "30 L/min and 300 mmHg",
+      "300 L/min and 30 mmHg",
+      "30 L/min and 30 mmHg",
+      "3 L/min and 30 mmHg"
+    ],
+    "correct": 0,
+    "body": "The course equipment-check answer is 30 L/min free-air flow and at least 300 mmHg with tubing occluded. This is an equipment capability check, not the suction pressure to apply to every patient; follow device instructions and protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 15"
+  },
+  {
+    "id": "airway-images-16",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 16,
+    "title": "Which listed device can deliver a high oxygen concentration to a patient who is breathing adequately?",
+    "options": [
+      "Nonrebreather mask",
+      "Oropharyngeal airway alone",
+      "Standard nasal cannula at 1 L/min",
+      "Nasopharyngeal airway alone"
+    ],
+    "correct": 0,
+    "body": "A nonrebreather can deliver a high oxygen concentration when supplied with sufficient flow and a properly inflated reservoir. It does not replace ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 16"
+  },
+  {
+    "id": "airway-images-17",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 17,
+    "title": "Which technique is appropriate when inserting a nasopharyngeal airway?",
+    "options": [
+      "Lubricate with water-soluble lubricant and direct the bevel toward the septum",
+      "Force the device through resistance",
+      "Direct the tip upward toward the bridge of the nose",
+      "Use a petroleum lubricant routinely"
+    ],
+    "correct": 0,
+    "body": "Pass a properly sized, lubricated NPA gently along the nasal floor, with the bevel toward the septum. Do not force it; assess contraindications and follow local protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 17"
+  },
+  {
+    "id": "airway-images-18",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 18,
+    "title": "A patient with a pulse is breathing 4 shallow breaths/min after an overdose and is vomiting. What airway action is needed immediately?",
+    "options": [
+      "Position to allow drainage and clear the airway, then promptly support ventilation",
+      "Insert an OPA through the vomit and leave it there",
+      "Give chest thrusts to empty the lungs",
+      "Wait until the patient reaches the ambulance"
+    ],
+    "correct": 0,
+    "body": "Clear vomit promptly using positioning and suction as appropriate, then ventilate the patient. Severe hypoventilation needs immediate support; clearing the airway must not become a prolonged delay.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 18"
+  },
+  {
+    "id": "airway-images-19",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 19,
+    "title": "What is the usual upper flow setting for a conventional low-flow adult nasal cannula in this course?",
+    "options": [
+      "6 L/min",
+      "2 L/min",
+      "15 L/min",
+      "30 L/min"
+    ],
+    "correct": 0,
+    "body": "Conventional low-flow nasal cannulas are commonly used at 1–6 L/min. Specialized high-flow nasal systems are different devices with different settings.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 19"
+  },
+  {
+    "id": "airway-images-20",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 20,
+    "title": "An unresponsive older adult has shallow respirations, poor air movement, and an SpO₂ of 89%. A pulse is present. What support is needed?",
+    "options": [
+      "Assisted ventilation with a BVM and oxygen",
+      "A nonrebreather mask alone despite inadequate ventilation",
+      "CPAP despite unresponsiveness and ineffective breathing",
+      "A Venturi mask alone"
+    ],
+    "correct": 0,
+    "body": "Ineffective ventilation requires assisted breaths. An oxygen mask can increase inspired oxygen but cannot correct inadequate air movement by itself.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 20"
+  },
+  {
+    "id": "airway-images-21",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 21,
+    "title": "Why can relatively minor swelling cause major airway problems in a young child?",
+    "options": [
+      "The pediatric airway has a small diameter",
+      "A child’s trachea is wider than an adult’s",
+      "Children cannot develop airway edema",
+      "Children have no soft tissue in the airway"
+    ],
+    "correct": 0,
+    "body": "A small airway loses a substantial proportion of its open area with swelling. Reassess pediatric airway patency and breathing frequently.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 21"
+  },
+  {
+    "id": "airway-images-22",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 22,
+    "title": "An unresponsive patient begins gagging as you insert an OPA. What should you do?",
+    "options": [
+      "Remove the OPA and consider an NPA if appropriate",
+      "Force the OPA into place",
+      "Use a larger OPA to suppress the gag reflex",
+      "Leave the OPA in and wait for gagging to stop"
+    ],
+    "correct": 0,
+    "body": "A gag reflex makes an OPA inappropriate. Remove it, maintain the airway, and consider an appropriate alternative such as an NPA if there are no contraindications.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 22"
+  },
+  {
+    "id": "airway-images-23",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 23,
+    "title": "What quick interaction can help you assess whether an alert patient is moving air through the upper airway?",
+    "options": [
+      "Ask a question and listen to the patient speak",
+      "Check ankle movement",
+      "Measure blood pressure before speaking",
+      "Inspect the fingernails only"
+    ],
+    "correct": 0,
+    "body": "A spoken response demonstrates airflow through the airway at that moment. It does not replace a full assessment or rule out evolving obstruction.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 23"
+  },
+  {
+    "id": "airway-images-24",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 24,
+    "title": "What is gas exchange between systemic capillary blood and body tissues called?",
+    "options": [
+      "Internal respiration",
+      "External respiration",
+      "Hyperventilation",
+      "Inhalation"
+    ],
+    "correct": 0,
+    "body": "Internal respiration occurs between systemic blood and tissues. External respiration occurs between alveoli and pulmonary capillary blood.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 24"
+  },
+  {
+    "id": "airway-images-25",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 25,
+    "title": "When does respiratory distress progress to respiratory failure?",
+    "options": [
+      "When the patient can no longer maintain adequate ventilation and/or oxygenation",
+      "Whenever the respiratory rate rises above normal",
+      "Only after all breathing stops",
+      "As soon as the patient speaks in full sentences"
+    ],
+    "correct": 0,
+    "body": "Failure occurs when respiratory function cannot meet the body’s needs. Poor air movement, fatigue, worsening oxygenation, and altered mental status are concerning; arrest means breathing has stopped.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 25"
+  },
+  {
+    "id": "airway-images-26",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 26,
+    "title": "A patient has fever, night sweats, unexplained weight loss, and coughing up blood. Which illness should raise concern?",
+    "options": [
+      "Tuberculosis",
+      "An isolated wrist sprain",
+      "Uncomplicated rhinovirus infection as a certain diagnosis",
+      "Simple seasonal allergies as a certain diagnosis"
+    ],
+    "correct": 0,
+    "body": "This combination raises concern for tuberculosis, among other causes. Use appropriate infection-control precautions and arrange further evaluation; the symptoms alone do not establish a diagnosis.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 26"
+  },
+  {
+    "id": "airway-images-27",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 27,
+    "title": "How can decreased consciousness threaten the airway?",
+    "options": [
+      "Loss of muscle tone can allow soft tissue to obstruct the airway",
+      "It always enlarges the upper airway",
+      "It prevents the tongue from moving",
+      "It guarantees normal ventilation"
+    ],
+    "correct": 0,
+    "body": "Reduced muscle tone can let the tongue and other soft tissues obstruct airflow. Position, open, and reassess the airway.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 27"
+  },
+  {
+    "id": "airway-images-28",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 28,
+    "title": "An alert adult with fever and respiratory distress has an SpO₂ of 89% and adequate spontaneous ventilation. Which treatment addresses the immediate oxygenation problem?",
+    "options": [
+      "Supplemental oxygen using an appropriate device per protocol",
+      "Aspirin as the primary treatment for hypoxemia",
+      "Acetaminophen instead of oxygen assessment",
+      "Wait for a diagnosis before treating hypoxemia"
+    ],
+    "correct": 0,
+    "body": "Address hypoxemia promptly while reassessing ventilation and investigating the illness. Fever treatment does not correct low oxygenation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 28"
+  },
+  {
+    "id": "airway-images-29",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 29,
+    "title": "A patient with COPD is acutely short of breath and hypoxemic. Which oxygen approach is appropriate?",
+    "options": [
+      "Give titrated oxygen and monitor closely according to protocol",
+      "Withhold needed oxygen to preserve a presumed hypoxic drive",
+      "Give no oxygen under any circumstances",
+      "Assume a normal oxygen level without assessment"
+    ],
+    "correct": 0,
+    "body": "Clinical update: do not withhold needed oxygen because of the old “hypoxic drive” explanation. Titrate and monitor; many protocols target 88–92% for patients at risk of hypercapnic respiratory failure. Oxygen-related CO₂ retention is multifactorial.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 29 · Clinical guidance update",
+    "sourceUrl": "https://costr.ilcor.org/document/fa-7031-pulse-oximetry-to-guide-supplemental-oxygen-in-copd-syr"
+  },
+  {
+    "id": "airway-images-30",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 30,
+    "title": "Which structure belongs to the lower airway?",
+    "options": [
+      "Bronchi",
+      "Uvula",
+      "Tonsils",
+      "Pharynx"
+    ],
+    "correct": 0,
+    "body": "The bronchi branch from the trachea and carry air into the lungs. The uvula, tonsils, and pharynx are upper-airway structures.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 30"
+  },
+  {
+    "id": "airway-images-31",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 31,
+    "title": "How is total minute ventilation calculated?",
+    "options": [
+      "Tidal volume × respiratory rate",
+      "Tidal volume × dead-space volume",
+      "Respiratory rate × bronchial diameter",
+      "Oxygen saturation × pulse rate"
+    ],
+    "correct": 0,
+    "body": "Minute ventilation is the volume moved per minute: tidal volume multiplied by respiratory rate. Alveolar ventilation subtracts dead-space volume before multiplying by rate.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 31"
+  },
+  {
+    "id": "airway-images-32",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 32,
+    "title": "Which finding makes an OPA inappropriate?",
+    "options": [
+      "An intact gag reflex",
+      "Unresponsiveness without a gag reflex",
+      "Need to help maintain an open airway in a deeply unresponsive patient",
+      "Apnea without a gag reflex"
+    ],
+    "correct": 0,
+    "body": "An OPA can provoke gagging and vomiting in a patient with an intact gag reflex. Select an airway adjunct based on assessment and contraindications.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 32"
+  },
+  {
+    "id": "airway-images-33",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 33,
+    "title": "How can positive-pressure ventilation reduce cardiac output?",
+    "options": [
+      "It increases intrathoracic pressure and can reduce venous return and preload",
+      "It always lowers intrathoracic pressure",
+      "It directly increases circulating blood volume",
+      "It always increases preload"
+    ],
+    "correct": 0,
+    "body": "Positive pressure can impede blood returning to the heart. Excessive ventilation can worsen this effect; use the appropriate rate and only enough volume for visible chest rise.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 33"
+  },
+  {
+    "id": "airway-images-34",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 34,
+    "title": "Which group of findings is most concerning for inadequate breathing?",
+    "options": [
+      "Increased effort, cyanosis, clammy skin, and altered mental status",
+      "Comfortable breathing, normal skin, and normal speech",
+      "Normal air movement and a normal level of consciousness",
+      "Normal chest rise with no respiratory complaint"
+    ],
+    "correct": 0,
+    "body": "Increased work of breathing combined with signs of poor oxygen delivery and altered mental status is concerning. Cyanosis can be late; its absence does not rule out hypoxia.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 34"
+  },
+  {
+    "id": "airway-images-35",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 35,
+    "title": "When ventilating through a total laryngectomy stoma, how should the head and neck generally be positioned?",
+    "options": [
+      "Neutral; ventilate through the stoma",
+      "Hyperextend the neck to connect the mouth to the lungs",
+      "Close the stoma and ventilate only the nose",
+      "Perform a head tilt to restore the surgically disconnected upper airway"
+    ],
+    "correct": 0,
+    "body": "A total laryngectomy separates the upper airway from the lungs. Ventilate at the stoma and maintain a neutral position. Other tracheostomy anatomy may differ, so identify the patient’s airway anatomy.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 35"
+  },
+  {
+    "id": "airway-images-36",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 36,
+    "title": "Ventilation suddenly becomes difficult in an intubated patient. What does increased bag resistance mean?",
+    "options": [
+      "Urgently reassess for tube problems, obstruction, bronchospasm, or pneumothorax and seek ALS help",
+      "It proves pneumothorax without any further assessment",
+      "It proves the patient no longer needs ventilation",
+      "It means resistance can safely be ignored"
+    ],
+    "correct": 0,
+    "body": "Revised for clarity: increased resistance is a warning, not a diagnosis. Reassess the patient, tube and equipment promptly and involve the responsible ALS clinician; several life-threatening problems can cause it.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 36"
+  },
+  {
+    "id": "airway-images-37",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 37,
+    "title": "An unresponsive older adult has snoring respirations. What is a likely source of partial obstruction?",
+    "options": [
+      "The tongue and relaxed upper-airway soft tissue",
+      "A normal open airway",
+      "Fluid in every case",
+      "A lower-airway wheeze"
+    ],
+    "correct": 0,
+    "body": "Snoring commonly indicates partial obstruction by relaxed upper-airway soft tissues. Open the airway and check ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 37"
+  },
+  {
+    "id": "airway-images-38",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 38,
+    "title": "Why can major internal bleeding impair oxygen delivery to tissues?",
+    "options": [
+      "Blood loss reduces circulating volume and oxygen-carrying red blood cells",
+      "Each remaining red blood cell necessarily loses all its hemoglobin",
+      "Blood loss increases perfusion to all tissues",
+      "Supplemental oxygen replaces the lost blood volume"
+    ],
+    "correct": 0,
+    "body": "Hemorrhage impairs perfusion and reduces the total red-cell mass available to carry oxygen. Oxygen is supportive care and does not replace bleeding control or restoration of circulation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 38"
+  },
+  {
+    "id": "airway-images-39",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 39,
+    "title": "An 8-year-old with a pulse is difficult to awaken and has weak, ineffective respirations with an SpO₂ of 88%. What should you suspect?",
+    "options": [
+      "Respiratory failure",
+      "Normal eupneic breathing",
+      "Respiratory arrest solely because the child is sleepy",
+      "An adequate airway because some breathing is present"
+    ],
+    "correct": 0,
+    "body": "Respiratory effort can persist during failure. Depressed mental status, ineffective air movement, and hypoxemia require urgent assessment and ventilatory support as indicated.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 39"
+  },
+  {
+    "id": "airway-images-40",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 40,
+    "title": "An unresponsive trauma patient has a carotid pulse and irregular gasping. What is the initial airway maneuver?",
+    "options": [
+      "Jaw thrust while limiting spinal movement, followed promptly by ventilation support",
+      "Apply a collar before opening the airway",
+      "Wait for a complete set of vital signs",
+      "Treat gasping as normal ventilation"
+    ],
+    "correct": 0,
+    "body": "Open the airway with an initial jaw thrust in suspected spinal trauma and promptly support ineffective breathing. Gasping is not normal breathing; a collar must not delay airway care.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 40"
+  },
+  {
+    "id": "airway-images-41",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 41,
+    "title": "What is the main purpose of assisting a patient’s inadequate ventilation?",
+    "options": [
+      "Improve alveolar ventilation and gas exchange",
+      "Reduce oncotic pressure",
+      "Guarantee increased cardiac output with every breath",
+      "Reduce intrathoracic pressure with forceful bagging"
+    ],
+    "correct": 0,
+    "body": "Assisted ventilation moves air into and out of the lungs so gas exchange can occur. Excessive positive pressure can reduce venous return.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 41"
+  },
+  {
+    "id": "airway-images-42",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 42,
+    "title": "Which finding in a child is a warning sign of increased breathing effort or possible airway compromise?",
+    "options": [
+      "Nasal flaring",
+      "Quiet, effortless breathing",
+      "Equal normal chest expansion",
+      "Normal speech without distress"
+    ],
+    "correct": 0,
+    "body": "Nasal flaring is a sign of increased work of breathing, especially in infants and children. It warrants assessment but does not identify the exact cause by itself.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 42"
+  },
+  {
+    "id": "airway-images-43",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 43,
+    "title": "Why is normal inhalation an active process?",
+    "options": [
+      "Respiratory muscles contract, expanding the chest and lowering pressure inside it",
+      "All respiratory muscles relax to force air inward",
+      "The diaphragm relaxes upward and increases lung volume",
+      "Air enters only because intrathoracic pressure rises above atmospheric pressure"
+    ],
+    "correct": 0,
+    "body": "Contraction of the diaphragm and other inspiratory muscles requires energy. Expansion lowers pressure relative to the atmosphere, drawing air inward.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 43"
+  },
+  {
+    "id": "airway-images-44",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 44,
+    "title": "You are ventilating too aggressively and the patient’s pulse becomes weaker. What should you correct?",
+    "options": [
+      "Reduce excessive rate and volume while ensuring visible chest rise and reassessing",
+      "Squeeze harder and faster",
+      "Begin compressions despite a definite pulse without reassessment",
+      "Stop all ventilation indefinitely"
+    ],
+    "correct": 0,
+    "body": "Excessive rate or volume raises intrathoracic pressure and can impair venous return. Correct ventilation technique and reassess the patient immediately.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 44"
+  },
+  {
+    "id": "airway-images-45",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 45,
+    "title": "Which finding most strongly suggests a partially obstructed upper airway?",
+    "options": [
+      "Unresponsiveness with snoring",
+      "Lying comfortably on one side",
+      "A medication bottle nearby without any patient findings",
+      "Normal effortless chest movement"
+    ],
+    "correct": 0,
+    "body": "Snoring with unresponsiveness suggests soft-tissue obstruction. Scene clues such as a pill bottle may suggest a cause but do not establish airway patency.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 45"
+  },
+  {
+    "id": "airway-images-46",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 46,
+    "title": "A Venturi mask mixes supplied oxygen with what?",
+    "options": [
+      "Ambient air",
+      "Carbon monoxide",
+      "Pure nitrogen from a separate cylinder",
+      "Only water vapor"
+    ],
+    "correct": 0,
+    "body": "A Venturi device entrains room air to deliver a controlled oxygen concentration when used with the correct adapter and flow.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 46"
+  },
+  {
+    "id": "airway-images-47",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 47,
+    "title": "For which calls should portable suction be readily available?",
+    "options": [
+      "Motor vehicle collision, cardiac arrest, and seizure calls",
+      "Only calls already known to involve vomiting",
+      "Only calls involving adults",
+      "Only calls with no airway risk"
+    ],
+    "correct": 0,
+    "body": "Blood, vomit, and secretions can compromise the airway in many emergencies. Bring appropriate airway equipment and have suction ready.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 47"
+  },
+  {
+    "id": "airway-images-48",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 48,
+    "title": "Which positioning principle helps open an infant’s airway for BVM ventilation?",
+    "options": [
+      "Use a neutral or slight sniffing position and avoid excessive flexion or extension",
+      "Always maximally hyperextend the neck",
+      "Apply routine cricoid pressure",
+      "Assume every infant needs the same amount of shoulder padding"
+    ],
+    "correct": 0,
+    "body": "Position for effective air movement, avoiding excessive flexion or extension. Padding depends on the infant’s anatomy and the surface; reassess chest rise and air entry.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 48"
+  },
+  {
+    "id": "airway-images-49",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 49,
+    "title": "After an exaggerated head tilt in a toddler, bag resistance is high and chest rise is poor. What positioning correction should you try?",
+    "options": [
+      "Ease the head toward neutral or a slight sniffing position and reassess",
+      "Tilt the head back as far as possible",
+      "Perform a blind finger sweep",
+      "Ignore chest rise if the bag feels full"
+    ],
+    "correct": 0,
+    "body": "Too much extension can compromise a small child’s airway. Reposition and check the seal, airway patency, and effectiveness of ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 49"
+  },
+  {
+    "id": "airway-images-50",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 50,
+    "title": "Copious vomit containing large food particles is clogging a suction tip. Which approach may help clear the airway?",
+    "options": [
+      "Use appropriate large-bore suction tubing according to training and equipment instructions",
+      "Use a tiny catheter that repeatedly clogs",
+      "Pour water into the airway to dilute the food",
+      "Push visible material deeper into the pharynx"
+    ],
+    "correct": 0,
+    "body": "Large particulate material can clog standard tips. Use suitable large-bore equipment and follow training; remove visible accessible material appropriately and avoid blind finger sweeps.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 50"
+  },
+  {
+    "id": "airway-images-51",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 51,
+    "title": "Which component reduces an oxygen cylinder’s high pressure to a usable working pressure?",
+    "options": [
+      "Pressure regulator",
+      "Flowmeter alone",
+      "Mask reservoir bag",
+      "Humidifier bottle"
+    ],
+    "correct": 0,
+    "body": "The regulator reduces cylinder pressure. The flowmeter controls delivery flow; these functions may be combined in one assembly.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 51"
+  },
+  {
+    "id": "airway-images-52",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 52,
+    "title": "A motorcyclist with a pulse is unresponsive and breathing 6 shallow breaths/min. What is needed after opening the airway?",
+    "options": [
+      "BVM-assisted ventilation with oxygen while maintaining manual spinal stabilization",
+      "A nonrebreather mask alone",
+      "A cervical collar instead of ventilatory support",
+      "Delay ventilation until a full trauma examination is complete"
+    ],
+    "correct": 0,
+    "body": "Slow, shallow breathing in an unresponsive patient is inadequate. Support ventilation promptly while limiting spinal movement and addressing other immediate threats.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 52"
+  },
+  {
+    "id": "airway-images-53",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 53,
+    "title": "Why can extremely rapid, shallow breathing provide inadequate minute ventilation?",
+    "options": [
+      "Tidal volume can fall enough that the high rate does not compensate",
+      "Respiratory rate never affects minute ventilation",
+      "Every rapid breath delivers more air than a slow breath",
+      "Rapid breathing eliminates anatomical dead space"
+    ],
+    "correct": 0,
+    "body": "Minute ventilation depends on both volume and rate. Shallow breaths may also move little air beyond dead space, reducing effective alveolar ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 53"
+  },
+  {
+    "id": "airway-images-54",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 54,
+    "title": "Which statement about airway obstruction is correct?",
+    "options": [
+      "Infection, burns, facial trauma, and the tongue can all compromise the airway",
+      "Infections can never narrow an airway",
+      "Burns cannot cause airway swelling",
+      "The tongue cannot obstruct an unresponsive patient’s airway"
+    ],
+    "correct": 0,
+    "body": "Revised for clarity: the screenshot’s EXCEPT item has no valid exception among its listed choices. All four can compromise an airway through swelling, injury, secretions, or loss of muscle tone.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 54"
+  },
+  {
+    "id": "airway-images-55",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 55,
+    "title": "For recall of the supplied course material, what maximum duration is specified for a single suction attempt?",
+    "options": [
+      "10 seconds",
+      "60 seconds",
+      "45 seconds",
+      "30 seconds"
+    ],
+    "correct": 0,
+    "body": "Course-specific answer: 10 seconds. Suction can worsen hypoxemia. Use the shortest effective pass, reassess and reoxygenate as needed; actual limits vary with age, procedure, device, and local protocol.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 55"
+  },
+  {
+    "id": "airway-images-56",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 56,
+    "title": "How is most oxygen carried in the blood?",
+    "options": [
+      "Bound to hemoglobin in red blood cells",
+      "Dissolved in plasma only",
+      "Attached to platelets",
+      "Attached to monocytes"
+    ],
+    "correct": 0,
+    "body": "Most oxygen is carried bound to hemoglobin. A much smaller amount is dissolved in plasma.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 56"
+  },
+  {
+    "id": "airway-images-57",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 57,
+    "title": "An alert older adult with cancer reports dyspnea. Lung sounds are clear, but SpO₂ is 92%. What is the best interpretation?",
+    "options": [
+      "Respiratory distress is possible despite clear breath sounds; assess and reassess",
+      "Clear lung sounds rule out every respiratory problem",
+      "The cancer must be in remission",
+      "A normal respiratory rate proves normal oxygenation"
+    ],
+    "correct": 0,
+    "body": "Dyspnea and abnormal oxygenation merit evaluation even with clear lung sounds. Assess ventilation, effort, circulation, and trends; neither lung sounds nor alertness alone determine severity.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 57"
+  },
+  {
+    "id": "airway-images-58",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 58,
+    "title": "What is a high-pitched sound from a narrowed upper airway called?",
+    "options": [
+      "Stridor",
+      "Gurgling",
+      "Snoring",
+      "Rhonchi"
+    ],
+    "correct": 0,
+    "body": "Stridor suggests upper-airway narrowing. Gurgling suggests liquid, while snoring commonly reflects relaxed soft-tissue obstruction.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 58"
+  },
+  {
+    "id": "airway-images-59",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 59,
+    "title": "Which findings can indicate significant hypoxia?",
+    "options": [
+      "Cyanosis and deteriorating mental status",
+      "Normal speech and effortless breathing as proof of hypoxia",
+      "Warm dry skin alone as proof of hypoxia",
+      "A normal level of consciousness as proof oxygen is adequate"
+    ],
+    "correct": 0,
+    "body": "Cyanosis and altered mental status are concerning signs of poor oxygen delivery. Cyanosis may be late and is not always obvious; assess the whole patient.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 59"
+  },
+  {
+    "id": "airway-images-60",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 60,
+    "title": "Which gas tends to accumulate when alveolar ventilation is inadequate?",
+    "options": [
+      "Carbon dioxide",
+      "Carbon monoxide produced by normal ventilation",
+      "Nitrogen produced by body cells",
+      "Helium"
+    ],
+    "correct": 0,
+    "body": "Hypoventilation reduces carbon dioxide elimination and can produce hypercapnia. Respiratory failure has several mechanisms, so not every form produces the same CO₂ level.",
+    "topic": "Airway & respiration",
+    "domain": "Primary Assessment",
+    "source": "Adapted from supplied course images · Question 60"
+  },
+  {
+    "id": "airway-images-61",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 61,
+    "title": "An alert patient needs oxygen but refuses a nonrebreather mask. Which alternative may be reasonable if clinically appropriate?",
+    "options": [
+      "Offer a tolerated nasal cannula and reassess oxygenation and ventilation",
+      "Force the mask on without further discussion",
+      "Use a paper bag for rebreathing",
+      "Give up all assessment and treatment"
+    ],
+    "correct": 0,
+    "body": "Explain the treatment and offer a tolerated alternative when appropriate. Reassess response and escalate care if needs cannot be met. Do not use a paper bag.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 61"
+  },
+  {
+    "id": "airway-images-62",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 62,
+    "title": "Which suctioning technique is appropriate?",
+    "options": [
+      "Insert without applying suction, then suction while withdrawing",
+      "Apply continuous suction throughout insertion and withdrawal",
+      "Leave the catheter in place indefinitely with suction on",
+      "Suction before checking whether equipment works"
+    ],
+    "correct": 0,
+    "body": "Apply suction on withdrawal using the appropriate technique and shortest effective duration. Monitor the patient and pause to reoxygenate as needed.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 62"
+  },
+  {
+    "id": "airway-images-63",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 63,
+    "title": "In the adult inverted-insertion technique for an OPA, how far is the airway rotated as it advances into position?",
+    "options": [
+      "180 degrees",
+      "45 degrees",
+      "100 degrees",
+      "360 degrees"
+    ],
+    "correct": 0,
+    "body": "The adult technique uses a 180-degree rotation. Direct insertion with a tongue depressor is another technique; do not automatically apply adult rotation technique to children.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 63"
+  },
+  {
+    "id": "airway-images-64",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 64,
+    "title": "A trauma patient is breathing with a pulse, but blood in the mouth is causing gurgling. What should you address first?",
+    "options": [
+      "Clear the airway with suction while spinal stabilization is maintained",
+      "Apply a rigid collar before clearing the airway",
+      "Insert an OPA into pooled blood without clearing it",
+      "Ignore gurgling because breathing is present"
+    ],
+    "correct": 0,
+    "body": "Gurgling indicates liquid in the airway. Clear it promptly, remove visible accessible debris as appropriate, and reassess before further airway interventions.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 64"
+  },
+  {
+    "id": "airway-images-65",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 65,
+    "title": "What approximate oxygen concentration does the supplied course associate with a nonrebreather at 12–15 L/min?",
+    "options": [
+      "80–90%",
+      "16–21%",
+      "24–44%",
+      "Exactly 100% in every patient"
+    ],
+    "correct": 0,
+    "body": "Course estimate: 80–90%. Actual inspired oxygen varies with mask seal, reservoir inflation, flow, and patient ventilation; this is not a guaranteed fixed concentration.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 65"
+  },
+  {
+    "id": "airway-images-66",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 66,
+    "title": "Which patient should initially have the airway opened with a jaw thrust rather than a head tilt–chin lift?",
+    "options": [
+      "An unconscious patient after a significant fall with suspected cervical spine injury",
+      "An unconscious medical patient with no suspected trauma",
+      "A patient with a gag reflex who needs only reassurance",
+      "An alert patient speaking normally"
+    ],
+    "correct": 0,
+    "body": "Revised for clarity: suspected cervical spine injury favors an initial jaw thrust with spinal motion restriction. If ineffective, establish an open airway using necessary maneuvers; do not sacrifice ventilation.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 66 · Clinical guidance update",
+    "sourceUrl": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+  },
+  {
+    "id": "airway-images-67",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 67,
+    "title": "Chemoreceptors help regulate breathing by responding to changes in which factors?",
+    "options": [
+      "Carbon dioxide, pH, and oxygen",
+      "Carbon monoxide and helium only",
+      "Blood glucose and platelet count only",
+      "Nitrogen and body height only"
+    ],
+    "correct": 0,
+    "body": "CO₂-related changes in pH are a major normal stimulus for breathing. Peripheral chemoreceptors also respond to low arterial oxygen. Carbon monoxide is not the normal respiratory stimulus.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 67"
+  },
+  {
+    "id": "airway-images-68",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 68,
+    "title": "What oxygen-cylinder reserve pressure is used in the supplied course’s cylinder calculations?",
+    "options": [
+      "200 psi",
+      "1,000 psi",
+      "500 psi",
+      "0 psi"
+    ],
+    "correct": 0,
+    "body": "Course convention: reserve 200 psi. Follow the actual manufacturer and service policy for cylinder changeover and reserve; do not treat this number as universal for every system.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 68"
+  },
+  {
+    "id": "airway-images-69",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 69,
+    "title": "An anxious patient is breathing rapidly after an argument but has adequate air movement and an SpO₂ of 99%. Which approach is best?",
+    "options": [
+      "Assess for medical causes, reassure, and reassess; oxygen is not automatic solely for a fast rate",
+      "Assume anxiety without assessment and leave",
+      "Use a paper bag to raise carbon dioxide",
+      "Give oxygen because every rapid respiratory rate proves hypoxemia"
+    ],
+    "correct": 0,
+    "body": "Revised for clarity: rapid breathing alone does not establish hypoxemia or anxiety as the cause. Evaluate other causes and treat findings. Do not claim oxygen invariably worsens anxiety-related hyperventilation, and do not use paper-bag rebreathing.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 69"
+  },
+  {
+    "id": "airway-images-70",
+    "type": "question",
+    "set": "airway-images",
+    "sourceQuestion": 70,
+    "title": "What is an advantage of an NPA compared with an OPA?",
+    "options": [
+      "It may be tolerated by a patient with an intact gag reflex",
+      "It is ideal for every suspected skull-base fracture",
+      "It eliminates the need to reassess airway positioning",
+      "It guarantees adequate ventilation without breaths"
+    ],
+    "correct": 0,
+    "body": "An NPA may be tolerated when an OPA triggers a gag reflex. It does not replace positioning, ventilation assessment, or attention to contraindications.",
+    "topic": "Airway & respiration",
+    "domain": "Patient Treatment and Transport",
+    "source": "Adapted from supplied course images · Question 70"
+  }
+]);

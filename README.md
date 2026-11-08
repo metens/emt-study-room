@@ -26,3 +26,6 @@ The `sites-source` branch preserves the earlier server-backed version. This `mai
 ## Checks
 
 Run `node --check app.js` and `node tests/study.test.cjs`. No dependency installation is needed.
+
+## Airway & Respiration course review
+70 adapted questions from supplied course screenshots, numbered 1–70, are available at `/#airway-test` (timed) and `/#airway-quiz` (immediate feedback). The full bank now has 85 questions and 102 study items. Choices and question order are shuffled; missed questions can be retried. Source images and prior grades are not published. Older or ambiguous clinical statements were revised, with course-specific equipment conventions labeled.
