@@ -32,9 +32,12 @@ nav button{padding:10px 12px;margin:1px 0}aside{overflow-y:auto}.aside-bottom{po
 .respiratory-canvas{position:relative;width:100%;max-width:790px;margin:16px auto;background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .respiratory-canvas svg{display:block;width:100%;height:100%;pointer-events:none}
 .respiratory-target{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;min-width:0;padding:0;border-radius:50%;background:#fff;color:#1e433b;border:2px solid #376355;box-shadow:0 2px 5px #173b3226}
-.respiratory-target[draggable=true]{background:#d5e9f0;border-color:#1b6576;cursor:grab}
+.respiratory-target[data-placed=true]{background:#d5e9f0;border-color:#1b6576;cursor:grab}
 .respiratory-target.correct{background:#d4edcf;border-color:#3c7936}
 .respiratory-target.incorrect{background:#ffe9e0;border-color:#a14839}
 .respiratory-key{padding-left:24px}.respiratory-key li{margin:8px 0}.respiratory-key p{margin:3px 0 12px}
 .respiratory-return{padding:5px 9px;font-size:12px}
 @media(max-width:550px){.respiratory-target{width:36px;height:36px;font-size:12px}.respiratory-bank{padding:10px}.respiratory-labels button{font-size:13px;padding:8px 10px}}
+
+.respiratory-labels button,.respiratory-target[data-placed=true]{touch-action:none;user-select:none}
+.respiratory-drag-label{position:fixed;z-index:1000;transform:translate(-50%,-135%);pointer-events:none;padding:8px 12px;border:1px solid #277784;border-radius:8px;background:#e1f2f3;color:#1e433b;box-shadow:0 2px 8px #173b3240;font-weight:700;max-width:80vw}

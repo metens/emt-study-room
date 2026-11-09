@@ -85,6 +85,7 @@ const RESPIRATORY_PANELS = [
 let respiratoryPanel = 0;
 let respiratorySelected = null;
 let respiratoryMessage = '';
+let respiratorySuppressClick = false;
 const respiratoryRounds = RESPIRATORY_PANELS.map(panel => ({
   order: null, placements: Array(panel.targets.length).fill(null), result: null
 }));
@@ -108,11 +109,11 @@ function respiratoryPractice(focusId) {
     <p class="muted">${completed} of ${RESPIRATORY_PANELS.length} panels completed with all labels correct.</p>
     <section class="contentcard respiratory-board">
       <h2>${panel.title}</h2><p>${panel.instruction}</p>
-      <div class="respiratory-bank" ondragover="event.preventDefault()" ondrop="respiratoryDrop(event, null)">
+      <div class="respiratory-bank">
         <h3>Label bank</h3><p>Drag a label to a numbered target, or select a label and then tap a target.</p>
         <div class="respiratory-labels">
           ${round.order.filter(label => !round.placements.includes(label)).map(label =>
-            `<button type="button" id="resp-label-${label}" draggable="true" aria-pressed="${respiratorySelected === label}" ondragstart="respiratoryDrag(event, ${label})" onclick="respiratorySelect(${label})">${esc(panel.targets[label][0])}</button>`).join('')}
+            `<button type="button" id="resp-label-${label}" aria-pressed="${respiratorySelected === label}" onpointerdown="respiratoryGrab(event, ${label})" onclick="respiratorySelect(${label})">${esc(panel.targets[label][0])}</button>`).join('')}
           ${filled === panel.targets.length ? '<span>All labels placed.</span>' : ''}
         </div>
       </div>
@@ -123,7 +124,7 @@ function respiratoryPractice(focusId) {
           const label = round.placements[index];
           const state = round.result === 'checked' ? (label === index ? 'correct' : 'incorrect') : '';
           const name = label === null ? 'empty' : panel.targets[label][0];
-          return `<button type="button" id="resp-target-${index}" class="respiratory-target ${state}" style="left:${100 * x / 709}%;top:${100 * y / panel.height}%" aria-label="Target ${index + 1}, ${esc(name)}${state ? ', ' + state : ''}" title="${esc(name)}" draggable="${label !== null}" ${label === null ? '' : `ondragstart="respiratoryDrag(event, ${label})"`} onclick="respiratoryTarget(${index})" ondragover="event.preventDefault()" ondrop="respiratoryDrop(event, ${index})">${index + 1}</button>`;
+          return `<button type="button" id="resp-target-${index}" class="respiratory-target ${state}" style="left:${100 * x / 709}%;top:${100 * y / panel.height}%" aria-label="Target ${index + 1}, ${esc(name)}${state ? ', ' + state : ''}" title="${esc(name)}" data-placed="${label !== null}" ${label === null ? '' : `onpointerdown="respiratoryGrab(event, ${label})"`} onclick="respiratoryTarget(${index})">${index + 1}</button>`;
         }).join('')}
       </div>
       <div class="toolbar respiratory-actions">
@@ -153,6 +154,7 @@ function respiratorySwitch(index) {
 }
 
 function respiratorySelect(label) {
+  if (respiratorySuppressClick) return;
   respiratorySelected = respiratorySelected === label ? null : label;
   respiratoryMessage = respiratorySelected === null ? 'Selection cleared.' :
     RESPIRATORY_PANELS[respiratoryPanel].targets[label][0] + ' selected. Choose a target.';
@@ -160,6 +162,7 @@ function respiratorySelect(label) {
 }
 
 function respiratoryTarget(index) {
+  if (respiratorySuppressClick) return;
   const placed = respiratoryRounds[respiratoryPanel].placements[index];
   if (respiratorySelected !== null) {
     respiratoryMove(respiratorySelected, index);
@@ -183,16 +186,49 @@ function respiratoryMove(label, destination) {
   respiratoryPractice(destination === null ? 'resp-label-' + label : 'resp-target-' + destination);
 }
 
-function respiratoryDrag(event, label) {
-  event.dataTransfer.setData('application/x-emt-respiratory', `${respiratoryPanel}:${label}`);
-  event.dataTransfer.effectAllowed = 'move';
-}
+function respiratoryGrab(event, label) {
+  if (!event.isPrimary || event.button !== 0) return;
+  const button = event.currentTarget;
+  const {pointerId, clientX, clientY} = event;
+  let ghost = null;
+  button.setPointerCapture(pointerId);
 
-function respiratoryDrop(event, destination) {
-  event.preventDefault();
-  event.stopPropagation();
-  const match = /^(\d+):(\d+)$/.exec(event.dataTransfer.getData('application/x-emt-respiratory'));
-  if (match && Number(match[1]) === respiratoryPanel) respiratoryMove(Number(match[2]), destination);
+  function move(pointer) {
+    if (!ghost && Math.hypot(pointer.clientX - clientX, pointer.clientY - clientY) < 6) return;
+    if (!ghost) {
+      ghost = document.createElement('span');
+      ghost.className = 'respiratory-drag-label';
+      ghost.textContent = RESPIRATORY_PANELS[respiratoryPanel].targets[label][0];
+      ghost.setAttribute('aria-hidden', 'true');
+      document.body.append(ghost);
+    }
+    ghost.style.left = pointer.clientX + 'px';
+    ghost.style.top = pointer.clientY + 'px';
+  }
+
+  function finish(pointer) {
+    button.removeEventListener('pointermove', move);
+    button.removeEventListener('pointerup', finish);
+    button.removeEventListener('pointercancel', finish);
+    button.removeEventListener('lostpointercapture', finish);
+    if (!ghost) return;
+    ghost.remove();
+    respiratorySuppressClick = true;
+    setTimeout(() => { respiratorySuppressClick = false; }, 0);
+    if (pointer.type !== 'pointerup') return;
+    const drop = document.elementFromPoint(pointer.clientX, pointer.clientY);
+    const target = drop?.closest('.respiratory-target');
+    if (target) {
+      respiratoryMove(label, Number(target.id.slice('resp-target-'.length)));
+    } else if (drop?.closest('.respiratory-bank')) {
+      respiratoryMove(label, null);
+    }
+  }
+
+  button.addEventListener('pointermove', move);
+  button.addEventListener('pointerup', finish);
+  button.addEventListener('pointercancel', finish);
+  button.addEventListener('lostpointercapture', finish);
 }
 
 function respiratoryReview(reveal) {
