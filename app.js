@@ -95,15 +95,15 @@ function switchBpPractice(index) {
 
 
 const MENTAL_CASES = [
-  ['Waiting at the trailhead','upright','The patient looks at you before you speak. They correctly give their name, the trailhead, the day and approximate time, and explain they called after twisting an ankle. They follow a two-part command.','A','4',4,5,6,'The day and clock time both check time. The reason EMS was called checks situation.'],
-  ['After a fall','upright','The patient tracks you with eyes already open and follows a two-part command. They give their name and recognize the parking lot and the fall, but insist it is Monday morning when it is Friday evening. They speak in full sentences.','A','3',4,4,6,'They are alert and oriented to person, place, and situation. Time is incorrect. Coherent but disoriented speech scores V4.'],
-  ['In the ambulance','upright','The patient’s eyes are open before you speak. They give their correct name, location, and date, but cannot explain why EMS was called. They follow a two-part command.','A','3',4,5,6,'Situation is missing for A&O ×4. The official GCS verbal criteria use name, place, and date, so the verbal score here is V5.'],
-  ['On the couch','resting','The patient’s eyes are closed until you call their name. They answer in sentences, correctly name themselves and their apartment, but give the wrong date and cannot explain why EMS is there. They follow a two-part command.','V','2',3,4,6,'They respond to voice. Two orientation domains are demonstrated, but spontaneous alertness is absent.'],
-  ['On the floor','reach','The patient does not respond to voice. With a pressure stimulus, they open their eyes, groan, and reach toward the source to stop it. They do not follow commands.','P','unknown',2,2,5,'Purposeful movement toward the stimulus is localization. Groaning provides no orientation answers.'],
-  ['Beside a bicycle','withdraw','The patient responds only to pressure. Their eyes stay closed. They say isolated, unrelated words and quickly pull their arm away without reaching toward the source.','P','unknown',1,3,4,'Pulling away is withdrawal. Recognizable isolated words score V3, but they do not establish orientation.'],
-  ['On the gym floor','flex','The patient’s eyes remain closed, and they make no sound. With pressure, their elbows bend slowly and both arms draw inward across the chest.','P','unknown',1,1,3,'Stereotyped inward arm flexion is abnormal flexion, also called decorticate posturing.'],
-  ['At the base of the stairs','extend','The patient’s eyes remain closed, and they make no sound. With pressure, both elbows straighten and the arms extend stiffly.','P','unknown',1,1,2,'Elbow extension in response to pressure is abnormal extension, also called decerebrate posturing.'],
-  ['Found lying still','resting','The patient does not open their eyes, make a sound, or move in response to voice or pressure. There is no factor preventing assessment of any component.','U','unknown',1,1,1,'There is no response across all three GCS components. Orientation cannot be assessed.']
+  ['Waiting at the trailhead','The patient looks at you before you speak. They correctly give their name, the trailhead, the day and approximate time, and explain they called after twisting an ankle. They follow a two-part command.','A','4',4,5,6,'The day and clock time both check time. The reason EMS was called checks situation.'],
+  ['After a fall','The patient tracks you with eyes already open and follows a two-part command. They give their name and recognize the parking lot and the fall, but insist it is Monday morning when it is Friday evening. They speak in full sentences.','A','3',4,4,6,'They are alert and oriented to person, place, and situation. Time is incorrect. Coherent but disoriented speech scores V4.'],
+  ['In the ambulance','The patient’s eyes are open before you speak. They give their correct name, location, and date, but cannot explain why EMS was called. They follow a two-part command.','A','3',4,5,6,'Situation is missing for A&O ×4. The official GCS verbal criteria use name, place, and date, so the verbal score here is V5.'],
+  ['On the couch','The patient’s eyes are closed until you call their name. They answer in sentences, correctly name themselves and their apartment, but give the wrong date and cannot explain why EMS is there. They follow a two-part command.','V','2',3,4,6,'They respond to voice. Two orientation domains are demonstrated, but spontaneous alertness is absent.'],
+  ['On the floor','The patient does not respond to voice. With a pressure stimulus, they open their eyes, groan, and reach toward the source to stop it. They do not follow commands.','P','unknown',2,2,5,'Purposeful movement toward the stimulus is localization. Groaning provides no orientation answers.'],
+  ['Beside a bicycle','The patient responds only to pressure. Their eyes stay closed. They say isolated, unrelated words and quickly pull their arm away without reaching toward the source.','P','unknown',1,3,4,'Pulling away is withdrawal. Recognizable isolated words score V3, but they do not establish orientation.'],
+  ['On the gym floor','The patient’s eyes remain closed, and they make no sound. With pressure, their elbows bend slowly and both arms draw inward across the chest.','P','unknown',1,1,3,'Stereotyped inward arm flexion is abnormal flexion, also called decorticate posturing.'],
+  ['At the base of the stairs','The patient’s eyes remain closed, and they make no sound. With pressure, both elbows straighten and the arms extend stiffly.','P','unknown',1,1,2,'Elbow extension in response to pressure is abnormal extension, also called decerebrate posturing.'],
+  ['Found lying still','The patient does not open their eyes, make a sound, or move in response to voice or pressure. There is no factor preventing assessment of any component.','U','unknown',1,1,1,'There is no response across all three GCS components. Orientation cannot be assessed.']
 ];
 const MENTAL_OPTIONS = {
   alertness: [['A','Alert'],['V','Responds to voice'],['P','Responds to pressure'],['U','Unresponsive']],
@@ -114,32 +114,9 @@ const MENTAL_OPTIONS = {
 };
 let mentalCaseIndex = 0;
 
-function mentalPatientDrawing(pose, eyesOpen) {
-  const arms = {
-    upright:'M100 81L72 108L78 138 M140 81L168 108L162 138',
-    resting:'M100 81L83 110L82 145 M140 81L157 110L158 145',
-    reach:'M100 81L68 94L78 51 M140 81L156 114L158 145',
-    withdraw:'M100 81L72 101L49 80 M140 81L160 110L160 145',
-    flex:'M100 81L86 117L115 96 M140 81L154 117L125 96',
-    extend:'M100 81L74 140 M140 81L166 140'
-  };
-  return `<svg viewBox="0 0 240 210" width="240" style="max-width:100%;background:#edf2e5;border-radius:16px" aria-hidden="true">
-    <g transform="${pose === 'upright' ? '' : 'translate(120 105) rotate(-90) scale(.96) translate(-120 -105)'}">
-    <g stroke="#315748" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <path d="M101 130L96 164L86 188 M139 130L144 164L154 188"/>
-      <path d="${arms[pose]}"/>
-      <rect x="99" y="75" width="42" height="62" rx="15" fill="#82ac99"/>
-    </g>
-    <circle cx="120" cy="44" r="24" fill="#e5bb94" stroke="#315748" stroke-width="3"/>
-    <path d="${eyesOpen ? 'M111 43h1 M128 43h1' : 'M107 43h8 M125 43h8'}" stroke="#315748" stroke-width="3" stroke-linecap="round"/>
-    <path d="M115 54h10" stroke="#315748" stroke-width="2" stroke-linecap="round"/>
-    </g>
-  </svg>`;
-}
-
 function mentalStatusPractice(move = 0) {
   mentalCaseIndex = (mentalCaseIndex + move + MENTAL_CASES.length) % MENTAL_CASES.length;
-  const [title, pose, observations, alertness, orientation, eye, verbal, motor, reason] = MENTAL_CASES[mentalCaseIndex];
+  const [title, observations, alertness, orientation, eye, verbal, motor, reason] = MENTAL_CASES[mentalCaseIndex];
   const fields = [
     ['alertness','Level of responsiveness (AVPU)',alertness],
     ['orientation','How many orientation domains are demonstrated?',orientation],
@@ -151,7 +128,12 @@ function mentalStatusPractice(move = 0) {
     <section class="contentcard">
       <span class="tag">CASE ${mentalCaseIndex + 1} OF ${MENTAL_CASES.length}</span>
       <h2 id="mental-case-heading" tabindex="-1">${esc(title)}</h2>
-      ${mentalPatientDrawing(pose, eye === 4)}
+      <figure style="margin:0 0 1rem;max-width:480px">
+        <div style="position:relative;overflow:hidden;aspect-ratio:3 / 2;border-radius:12px;background:#edf2e5">
+          <img src="/diagrams/mental-status-scenes.jpg" alt="" style="position:absolute;max-width:none;width:300%;height:300%;left:-${(mentalCaseIndex % 3) * 100}%;top:-${Math.floor(mentalCaseIndex / 3) * 100}%">
+        </div>
+        <figcaption class="storage-note">AI-generated training scene. Use the written observations to score the response.</figcaption>
+      </figure>
       <p>${esc(observations)}</p>
       <form id="mental-form">
         <div class="toolbar">
