@@ -151,10 +151,47 @@ function mentalStatusPractice(move = 0) {
       </form>
     </section>
     <section class="contentcard">
-      <details><summary>Review the orientation prompts and scoring reference</summary>
-        <p><b>Person:</b> What’s your name? <b>Place:</b> Where are you? <b>Time:</b> What day is it or about what time is it? <b>Situation:</b> What happened or why are we here?</p>
-        <p>Day and clock time both test the same domain. Record the domains the patient demonstrates and whether they are spontaneously alert. A patient can answer some orientation questions after responding to voice.</p>
-        <p>Score the best observed eye, verbal, and motor responses separately. Use the observations in each case to distinguish localization, withdrawal, and posturing.</p>
+      <details>
+        <summary>Review AVPU, orientation, and GCS</summary>
+        <p>AVPU describes what it takes to get a response. Orientation describes what the patient knows. GCS scores what the patient’s eyes, speech, and movement do.</p>
+        <h3>Level of responsiveness (AVPU)</h3>
+        <dl>
+          <dt><strong>A · Alert</strong></dt><dd>Awake and engages spontaneously. An alert patient can still be confused.</dd>
+          <dt><strong>V · Responds to voice</strong></dt><dd>First opens their eyes, speaks, or moves when spoken to.</dd>
+          <dt><strong>P · Responds to pressure</strong></dt><dd>Voice gets no response, but pressure produces eye opening, a sound, or movement.</dd>
+          <dt><strong>U · Unresponsive</strong></dt><dd>No response to voice or pressure.</dd>
+        </dl>
+        <h3>Orientation domains</h3>
+        <ul>
+          <li><strong>Person</strong> — “What’s your name?”</li>
+          <li><strong>Place</strong> — “Where are you right now?”</li>
+          <li><strong>Time</strong> — “What day is it?” or “About what time is it?” Both prompts test one domain.</li>
+          <li><strong>Situation</strong> — “What happened?” or “Why are we here?”</li>
+        </ul>
+        <p>Count the domains the patient answers correctly. Choose <strong>0 domains</strong> if they give usable answers and miss all four. Choose <strong>Cannot assess</strong> if they cannot give usable answers, such as when they only groan. A patient who wakes to voice can answer orientation questions after waking and still score V on AVPU.</p>
+        <h3>Glasgow Coma Scale (GCS)</h3>
+        <p>Score the best observed response in each category, then add E + V + M.</p>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th scope="col">Score</th><th scope="col">Eye (E)</th><th scope="col">Verbal (V)</th><th scope="col">Motor (M)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">6</th><td>—</td><td>—</td><td>Follows commands</td></tr>
+              <tr><th scope="row">5</th><td>—</td><td>Correctly gives name, place, and date</td><td>Localizes by reaching toward the stimulus to stop it</td></tr>
+              <tr><th scope="row">4</th><td>Opens spontaneously</td><td>Coherent conversation with disorientation</td><td>Withdraws by quickly pulling away</td></tr>
+              <tr><th scope="row">3</th><td>Opens to sound</td><td>Recognizable, isolated words</td><td>Abnormal flexion with arms drawing inward</td></tr>
+              <tr><th scope="row">2</th><td>Opens to pressure</td><td>Sounds only, such as groans</td><td>Abnormal extension with elbows straightening</td></tr>
+              <tr><th scope="row">1</th><td>No eye opening</td><td>No verbal response</td><td>No motor response</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A patient who gives their correct name, place, and date can score <strong>V5</strong> even if they miss situation and demonstrate three of the four orientation domains.</p>
+        <h3>Worked example</h3>
+        <p>A patient opens their eyes when you call their name, speaks in sentences, gives their correct name and location, gets the date wrong, cannot explain why EMS is there, and follows commands.</p>
+        <ul>
+          <li><strong>AVPU V</strong> — First responds to voice.</li>
+          <li><strong>2 orientation domains</strong> — Demonstrates person and place.</li>
+          <li><strong>GCS 13 (E3 V4 M6)</strong> — Eyes open to sound, conversation shows disorientation, and the patient follows commands.</li>
+        </ul>
         <p class="source"><a href="https://www.glasgowcomascale.org/downloads/GCS-Assessment-Aid-English.pdf" target="_blank" rel="noopener">Official GCS assessment aid</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK615348/table/ch7.tab1/" target="_blank" rel="noopener">Mental status assessment reference</a></p>
       </details>
     </section>`;
