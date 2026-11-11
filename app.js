@@ -277,6 +277,15 @@ function hearPractice() {
       <h2>Hey you, it’s me.</h2>
       <p>“[Hospital], this is Medic [number] with a Code [1–3] report.”</p>
       <p>Age and sex → chief complaint, differential and life threats → interventions → last vitals → ETA → questions.</p>
+      <details>
+        <summary>HEAR report guidance script</summary>
+        <blockquote>
+          <p>“Hospital <strong>[hospital name]</strong>, this is <strong>[certification level, unit number]</strong>. We are transporting <strong>[transport code]</strong> with a <strong>[patient’s age, reported gender]</strong>.</p>
+          <p>They are complaining of <strong>[chief complaint / differential diagnosis]</strong>. I have administered/assisted <strong>[interventions, e.g., EPI, Nitro, ASA, Glucose]</strong> with or without change <strong>[patient response, e.g., chest pain relieved, mentation improved]</strong>.</p>
+          <p>Their vital signs are currently <strong>[BP, HR, RR, SpO₂, CBG, etc.]</strong>. We are about <strong>[ETA]</strong>. Do you have any questions?”</p>
+        </blockquote>
+        <p class="source"><a href="https://openoregon.pressbooks.pub/emslabmanual/chapter/calling-in-hear-reports/" target="_blank" rel="noopener noreferrer">Calling in HEAR Reports · Oregon EMS Psychomotor Skills Lab Manual</a></p>
+      </details>
     </section>
     <section class="contentcard">
       <label>Practice case <select id="hear-case">${HEAR_CASES.map(([name],i)=>`<option value="${i}" ${i===hearIndex?'selected':''}>${esc(name)}</option>`).join('')}</select></label>
