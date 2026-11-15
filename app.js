@@ -50,6 +50,7 @@ function vitalsPractice(index = bpPracticeIndex) {
   const practice = BP_PRACTICES[index];
   const choices = shuffle([practice.answer, ...practice.distractors]);
   app.innerHTML = heading('Vitals: Manual blood pressure', 'Watch the cuff gauge and listen for the Korotkoff sounds as the pressure falls.') + `
+    <div class="assessment-actions"><button type="button" onclick="document.getElementById('vitals-summary').scrollIntoView()">Skip to Vital Signs Summary ↓</button></div>
     <section class="contentcard">
       <div class="actions" role="group" aria-label="Choose a blood pressure practice video">
         ${BP_PRACTICES.map(({number}, i) => `<button type="button" aria-pressed="${i === index}" class="${i === index ? 'primary' : ''}" onclick="switchBpPractice(${i})">Practice ${number}</button>`).join('')}
@@ -74,7 +75,9 @@ function vitalsPractice(index = bpPracticeIndex) {
         </div>
         <p id="bp-feedback" role="status"></p>
       </form>
-    </section>`;
+    </section>
+    <section id="vitals-summary" class="contentcard" style="margin-top:1.5rem"></section>`;
+  renderChapterSummary(VITALS_SUMMARY);
   const form = document.querySelector('#bp-answer-form');
   form.addEventListener('submit', event => {
     event.preventDefault();
