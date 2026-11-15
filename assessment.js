@@ -79,84 +79,99 @@ const PRIMARY_SUMMARY_LINES = [
     " and helps guide the rest of the assessment."
   ]
 ];
-let primarySummary = newPrimarySummary();
+const PRIMARY_SUMMARY = { id: 'primary-summary', title: 'Primary Assessment Summary', words: PRIMARY_SUMMARY_WORDS, lines: PRIMARY_SUMMARY_LINES };
+const VITALS_SUMMARY = {
+  id: 'vitals-summary',
+  title: 'Vital Signs Summary',
+  words: ['condition', 'baseline vital signs', 'pulse', 'respirations', 'skin, pupils', 'blood pressure',
+    'adults and children', 'repeated', 'continuing assessment', '15 minutes', '5 minutes'],
+  lines: [
+    ['To establish a starting point for assessing a patient’s ', 0, ', take a complete set of ', 1,
+      ' that includes ', 2, ', ', 3, ', ', 4, ', and ', 5, '.'],
+    ['Know the normal ranges for pulse, respirations, and blood pressure in ', 6, '.'],
+    ['Trends become clearer when vital signs are ', 7, ' as part of the ', 8, '.'],
+    ['Recheck vital signs at least every ', 9, ' for a stable patient and at least every ', 10, ' for an unstable patient.']
+  ]
+};
 
-function newPrimarySummary() {
-  return { order: shuffle(Array.from({length: 11}, (_, i) => i)), placed: {}, selected: null, checked: false };
+const summaryRounds = new Map();
+
+function renderPrimarySummary() {
+  renderChapterSummary(PRIMARY_SUMMARY);
 }
 
-function renderPrimarySummary(focusId) {
-  const panel = document.querySelector('#primary-summary');
-  const {order, placed, selected, checked} = primarySummary;
-  const count = Object.keys(placed).length;
-  const score = PRIMARY_SUMMARY_WORDS.filter((_, i) => placed[i] === i).length;
+function renderChapterSummary(summary, focusId) {
+  const {id, title, words, lines} = summary;
+  const panel = document.getElementById(id);
+  if (!summaryRounds.has(id)) {
+    summaryRounds.set(id, {order: shuffle(words.map((_, i) => i)), placed: {}, selected: null, checked: false});
+  }
+  const round = summaryRounds.get(id);
+  const {order, placed, selected, checked} = round;
+  const assigned = Object.values(placed);
+  const score = words.filter((_, i) => placed[i] === i).length;
+
   panel.innerHTML = `
-    <h2>Primary Assessment Summary</h2>
-    <p>Drag each phrase into its blank, or select a phrase and then select a blank. Select a filled blank to return its phrase to the bank.</p>
+    <h2>${title}</h2>
+    <p>Drag each phrase into its blank, or select a phrase and then a blank. Select a filled blank to return its phrase to the bank.</p>
     <section class="assessment-bank" aria-label="Summary answer bank">
       <h3>Answer bank</h3>
       <div class="assessment-labels">${order.map(i => `
-        <button id="primary-word-${i}" type="button" class="assessment-label ${selected === i ? 'picked' : ''}"
-          draggable="${!Object.values(placed).includes(i)}" aria-pressed="${selected === i}"
-          ${Object.values(placed).includes(i) ? 'disabled' : ''}
-          onclick="selectPrimaryWord(${i})" ondragstart="dragPrimaryWord(event, ${i})">${esc(PRIMARY_SUMMARY_WORDS[i])}</button>`).join('')}</div>
+        <button type="button" data-word="${i}" class="assessment-label ${selected === i ? 'picked' : ''}"
+          draggable="${!assigned.includes(i)}" aria-pressed="${selected === i}"
+          ${assigned.includes(i) ? 'disabled' : ''}>${esc(words[i])}</button>`).join('')}</div>
     </section>
-    <div style="margin:1rem 0">${PRIMARY_SUMMARY_LINES.map(parts => `<p style="line-height:2">${parts.map(part =>
-      typeof part === 'string' ? esc(part) : primarySummaryBlank(part)
-    ).join('')}</p>`).join('')}</div>
+    <div style="margin:1rem 0">${lines.map(parts => `<p style="line-height:2">${parts.map(part => {
+      if (typeof part === 'string') return esc(part);
+      const phrase = words[placed[part]];
+      const result = checked ? (placed[part] === part ? 'Correct' : phrase ? 'Try again' : 'Empty') : '';
+      return `<button type="button" data-blank="${part}" style="vertical-align:baseline;white-space:normal;text-align:left"
+        aria-label="Blank ${part + 1}${phrase ? ', ' + esc(phrase) : ''}${result ? ', ' + result : ''}">${phrase ? esc(phrase) : 'Blank ' + (part + 1)}${result ? ' · ' + result : ''}</button>`;
+    }).join('')}</p>`).join('')}</div>
     <div class="assessment-actions">
-      <button class="primary" id="primary-summary-check" onclick="checkPrimarySummary()">Check summary</button>
-      <button id="primary-summary-reset" onclick="resetPrimarySummary()">Reset &amp; shuffle</button>
+      <button type="button" class="primary" data-check>Check summary</button>
+      <button type="button" data-reset>Reset &amp; shuffle</button>
     </div>
-    <p class="assessment-status" role="status">${count}/11 placed${checked ? ' · ' + score + '/11 correct' : ''}${selected !== null ? ' · Selected: ' + esc(PRIMARY_SUMMARY_WORDS[selected]) : ''}</p>`;
-  if (focusId) document.getElementById(focusId)?.focus({preventScroll:true});
-}
+    <p class="assessment-status" role="status">${assigned.length}/${words.length} placed${checked ? ' · ' + score + '/' + words.length + ' correct' : ''}${selected !== null ? ' · Selected: ' + esc(words[selected]) : ''}</p>`;
 
-function primarySummaryBlank(index) {
-  const {placed, checked} = primarySummary;
-  const phrase = PRIMARY_SUMMARY_WORDS[placed[index]];
-  const result = checked ? (placed[index] === index ? 'Correct' : phrase ? 'Try again' : 'Empty') : '';
-  return `<button id="primary-blank-${index}" type="button" style="vertical-align:baseline;white-space:normal;text-align:left"
-      aria-label="Blank ${index + 1}${phrase ? ', ' + esc(phrase) : ''}${result ? ', ' + result : ''}"
-      onclick="placePrimaryWord(${index})" ondragover="event.preventDefault()" ondrop="dropPrimaryWord(event, ${index})">${phrase ? esc(phrase) : 'Blank ' + (index + 1)}${result ? ' · ' + result : ''}</button>`;
-}
-
-function selectPrimaryWord(index) {
-  primarySummary.selected = primarySummary.selected === index ? null : index;
-  renderPrimarySummary('primary-word-' + index);
-}
-
-function placePrimaryWord(blank, word = primarySummary.selected) {
-  const {placed} = primarySummary;
-  if (word !== null) {
-    if (!Number.isInteger(word) || !PRIMARY_SUMMARY_WORDS[word] || Object.values(placed).includes(word)) return;
-    placed[blank] = word;
-  } else {
-    delete placed[blank];
+  const place = (blank, word) => {
+    if (word === null) delete placed[blank];
+    else if (Number.isInteger(word) && words[word] && !assigned.includes(word)) placed[blank] = word;
+    else return;
+    round.selected = null;
+    round.checked = false;
+    renderChapterSummary(summary, `[data-blank="${blank}"]`);
+  };
+  const dragType = 'application/x-emt-' + id;
+  for (const button of panel.querySelectorAll('[data-word]')) {
+    const word = Number(button.dataset.word);
+    button.onclick = () => {
+      round.selected = selected === word ? null : word;
+      renderChapterSummary(summary, `[data-word="${word}"]`);
+    };
+    button.ondragstart = event => {
+      event.dataTransfer.setData(dragType, String(word));
+      event.dataTransfer.effectAllowed = 'move';
+    };
   }
-  primarySummary.selected = null;
-  primarySummary.checked = false;
-  renderPrimarySummary('primary-blank-' + blank);
-}
-
-function dragPrimaryWord(event, word) {
-  event.dataTransfer.setData('application/x-emt-primary-summary', String(word));
-  event.dataTransfer.effectAllowed = 'move';
-}
-
-function dropPrimaryWord(event, blank) {
-  event.preventDefault();
-  const word = event.dataTransfer.getData('application/x-emt-primary-summary');
-  if (word !== '') placePrimaryWord(blank, Number(word));
-}
-
-function checkPrimarySummary() {
-  primarySummary.checked = true;
-  primarySummary.selected = null;
-  renderPrimarySummary('primary-summary-check');
-}
-
-function resetPrimarySummary() {
-  primarySummary = newPrimarySummary();
-  renderPrimarySummary('primary-summary-reset');
+  for (const button of panel.querySelectorAll('[data-blank]')) {
+    const blank = Number(button.dataset.blank);
+    button.onclick = () => place(blank, selected);
+    button.ondragover = event => event.preventDefault();
+    button.ondrop = event => {
+      event.preventDefault();
+      const word = event.dataTransfer.getData(dragType);
+      if (word !== '') place(blank, Number(word));
+    };
+  }
+  panel.querySelector('[data-check]').onclick = () => {
+    round.checked = true;
+    round.selected = null;
+    renderChapterSummary(summary, '[data-check]');
+  };
+  panel.querySelector('[data-reset]').onclick = () => {
+    summaryRounds.delete(id);
+    renderChapterSummary(summary, '[data-reset]');
+  };
+  if (focusId) panel.querySelector(focusId)?.focus({preventScroll:true});
 }
