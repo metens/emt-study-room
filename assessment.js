@@ -175,3 +175,107 @@ function renderChapterSummary(summary, focusId) {
   };
   if (focusId) panel.querySelector(focusId)?.focus({preventScroll:true});
 }
+
+const REASSESSMENT_SUMMARY = {
+  id: 'reassessment-summary',
+  title: 'Reassessment Summary',
+  words: ['last step', '15 minutes', '5 minutes', 'primary assessment', 'vital signs',
+    'history and physical exam', 'treatments or interventions', 'oxygen', 'bleeding',
+    'spinal motion restriction', 'splints', 'Reassessment', 'Trending', 'frequently', 'record'],
+  lines: [
+    ['Reassessment is the ', 0, ' in your patient assessment.'],
+    ['You should generally reassess a stable patient at least every ', 1,
+      ' and an unstable patient at least every ', 2, '.'],
+    ['Elements of reassessment include repeating the ', 3, ', repeating and recording ', 4,
+      ', repeating pertinent parts of the ', 5, ', and checking any ', 6, ' you performed for the patient.'],
+    ['Treatments you need to check include ', 7, ', ', 8, ', ', 9, ', and ', 10, '.'],
+    [11, ' is vital for noticing changes in the patient’s condition.'],
+    [12, ' can help determine if a patient is improving or deteriorating. Reassess ', 13,
+      ' and ', 14, ' new assessment data.']
+  ]
+};
+
+const REASSESSMENT_NOTES = [
+  [
+    "Reassessment defined",
+    [
+      "Repeat key elements of the assessment to identify subtle or obvious changes, trends, deterioration, and improvement. Continue reassessing throughout care. Immediate lifesaving treatment may take priority, with reassessment resumed as soon as possible.",
+      "Explain what you are doing and communicate with the patient. Consider anxiety, embarrassment, and concerns."
+    ]
+  ],
+  [
+    "Repeat the primary assessment",
+    [
+      "Recheck for life-threatening problems. Reassess mental status and airway patency. Monitor breathing rate and quality, pulse rate and quality, and skin color and temperature.",
+      "Reestablish patient priorities as the condition changes."
+    ]
+  ],
+  [
+    "Reassess and record vital signs",
+    [
+      "Compare new measurements with the baseline. Reevaluate oxygen saturation and document the time and findings so trends are visible."
+    ]
+  ],
+  [
+    "Repeat pertinent history and physical examination",
+    [
+      "Ask whether the chief complaint or its severity has changed, whether new symptoms have appeared, and how the patient feels after treatment. Repeat the relevant physical examination."
+    ]
+  ],
+  [
+    "Check treatments and interventions",
+    [
+      "Verify oxygen delivery and the effectiveness of assisted ventilation. Recheck bleeding control and other interventions, including spinal motion restriction and splints when used.",
+      "Check whether each treatment is effective and whether care needs adjustment."
+    ]
+  ],
+  [
+    "Pediatric reassessment",
+    [
+      "Assess age-appropriate responsiveness, breathing, circulation, and changes from the child’s baseline. Interpret crying together with breathing effort, tone, and interaction. Crying alone does not establish normal mental status.",
+      "The original notes describe flicking an infant’s feet. Use your current pediatric assessment training and local protocol for assessing an unresponsive child."
+    ]
+  ],
+  [
+    "Observe and document trends",
+    [
+      "Compare findings over time to determine whether the patient is improving or deteriorating. Repeat checks to confirm the direction of change and document it.",
+      "Trends may indicate a need for new treatments or adjustments to ongoing care."
+    ]
+  ],
+  [
+    "Stable and unstable patients",
+    [
+      "Generally reassess stable patients at least every 15 minutes and unstable or potentially unstable patients at least every 5 minutes. Reassess sooner when indicated by the condition or treatment.",
+      "If you suspect a change, repeat at least the primary assessment promptly."
+    ]
+  ],
+  [
+    "Four review questions",
+    [
+      "How is my patient doing?",
+      "Have I documented the encounter?",
+      "Do we have a plan for appropriate disposition?",
+      "Have I addressed all of their concerns?",
+      "The PDF also discusses reassessment during emergency department care. For this ambulance study section, keep focusing on changes during the encounter and communicate them at handoff."
+    ]
+  ]
+];
+
+function reassessmentStudy() {
+  app.innerHTML = heading('Reassessment', 'Review your notes and rebuild the chapter summary from memory.') + `
+    <div class="actions">
+      <a class="button" href="#reassessment-summary" onclick="event.preventDefault();document.getElementById('reassessment-summary').scrollIntoView()">Skip to drag-and-drop exercise ↓</a>
+      <a class="button" href="/resources/reassessment-notes.pdf" target="_blank" rel="noopener">Open original notes PDF ↗</a>
+    </div>
+    <section id="reassessment-summary" class="contentcard" style="margin-top:1.5rem"></section>
+    <section class="contentcard">
+      <h2>Reassessment notes</h2>
+      <p>The summary calls reassessment the last step in the assessment sequence. In practice it is repeated throughout care and whenever the patient’s condition changes.</p>
+      ${REASSESSMENT_NOTES.map(([title,paragraphs]) => `<details open><summary>${esc(title)}</summary>${paragraphs.map(text=>`<p>${esc(text)}</p>`).join('')}</details>`).join('')}
+      <p class="source">Based on your three-page Reassessment notes.
+        <a href="https://www.ems.gov/assets/EMT_Instructional_Guidelines.pdf#page=79" target="_blank" rel="noopener">EMT reassessment reference ↗</a>
+      </p>
+    </section>`;
+  renderChapterSummary(REASSESSMENT_SUMMARY);
+}

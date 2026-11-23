@@ -43,16 +43,16 @@ nav button{padding:10px 12px;margin:1px 0}aside{overflow-y:auto}.aside-bottom{po
 .respiratory-drag-label{position:fixed;z-index:1000;transform:translate(-50%,-135%);pointer-events:none;padding:8px 12px;border:1px solid #277784;border-radius:8px;background:#e1f2f3;color:#1e433b;box-shadow:0 2px 8px #173b3240;font-weight:700;max-width:80vw}
 
 /* Summary banks stay in document flow so they cannot cover the answer blanks. */
-:is(#primary-summary, #vitals-summary) .assessment-bank {
+:is(#primary-summary, #vitals-summary, #reassessment-summary) .assessment-bank {
   position: static;
   max-height: none;
   overflow: visible;
 }
-:is(#primary-summary, #vitals-summary) .assessment-labels {
+:is(#primary-summary, #vitals-summary, #reassessment-summary) .assessment-labels {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
   gap: 8px;
 }
-:is(#primary-summary, #vitals-summary) .assessment-status {
+:is(#primary-summary, #vitals-summary, #reassessment-summary) .assessment-status {
   position: static;
 }
