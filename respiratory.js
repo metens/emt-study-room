@@ -109,7 +109,7 @@ function respiratoryPractice(focusId) {
     <p class="muted">${completed} of ${RESPIRATORY_PANELS.length} panels completed with all labels correct.</p>
     <section class="contentcard respiratory-board">
       <h2>${panel.title}</h2><p>${panel.instruction}</p>
-      <div class="respiratory-bank">
+      <div class="respiratory-placement-layout"><div class="respiratory-bank">
         <h3>Label bank</h3><p>Drag a label to a numbered target, or select a label and then tap a target.</p>
         <div class="respiratory-labels">
           ${round.order.filter(label => !round.placements.includes(label)).map(label =>
@@ -127,7 +127,7 @@ function respiratoryPractice(focusId) {
           return `<button type="button" id="resp-target-${index}" class="respiratory-target ${state}" style="left:${100 * x / 709}%;top:${100 * y / panel.height}%" aria-label="Target ${index + 1}, ${esc(name)}${state ? ', ' + state : ''}" title="${esc(name)}" data-placed="${label !== null}" ${label === null ? '' : `onpointerdown="respiratoryGrab(event, ${label})"`} onclick="respiratoryTarget(${index})">${index + 1}</button>`;
         }).join('')}
       </div>
-      <div class="toolbar respiratory-actions">
+      </div><div class="toolbar respiratory-actions">
         <button type="button" class="primary" onclick="respiratoryReview(false)">Check panel</button>
         <button type="button" onclick="respiratoryReview(true)">Reveal answers</button>
         <button type="button" onclick="respiratoryReset()">Reset panel</button>

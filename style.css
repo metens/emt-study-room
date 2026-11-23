@@ -98,3 +98,96 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible {
   outline: 3px solid #bd687d;
   outline-offset: 3px;
 }
+
+/* Label banks occupy their own right-hand column. */
+.assessment-layout,
+.mnemonic-layout,
+.ecg-layout,
+.respiratory-placement-layout,
+.summary-placement-layout,
+.dispatch-placement-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 28%);
+  gap: 20px;
+  align-items: start;
+}
+.assessment-layout > .assessment-bank,
+.mnemonic-layout > .mnemonic-bank,
+.ecg-layout > .ecg-bank,
+.respiratory-placement-layout > .respiratory-bank,
+.summary-placement-layout > .assessment-bank,
+.dispatch-placement-layout > .dispatch-bank {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 100px;
+  max-height: calc(100dvh - 124px);
+  overflow-y: auto;
+  margin: 0;
+  min-width: 0;
+}
+.assessment-layout > .assessment-scroll,
+.mnemonic-layout > .mnemonic-sections,
+.ecg-layout > .ecg-body-panel,
+.respiratory-placement-layout > .respiratory-canvas,
+.summary-placement-layout > .summary-answer-text,
+.dispatch-placement-layout > .dispatch-zones {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+.respiratory-placement-layout > #resp-status {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0;
+}
+.respiratory-placement-layout > .respiratory-bank,
+.respiratory-placement-layout > .respiratory-canvas {
+  grid-row: 2;
+}
+.summary-placement-layout .assessment-labels,
+.assessment-layout .assessment-labels,
+.respiratory-placement-layout .respiratory-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.respiratory-placement-layout .respiratory-labels button {
+  width: 100%;
+  text-align: left;
+  white-space: normal;
+}
+.ecg-layout .ecg-option { display: flex; width: 100%; margin-right: 0; }
+.dispatch-placement-layout .dispatch-zones { grid-template-columns: 1fr; }
+
+@media (max-width: 900px) {
+  .assessment-layout,
+  .mnemonic-layout,
+  .ecg-layout,
+  .respiratory-placement-layout,
+  .summary-placement-layout,
+  .dispatch-placement-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .assessment-layout > .assessment-bank,
+  .mnemonic-layout > .mnemonic-bank,
+  .ecg-layout > .ecg-bank,
+  .respiratory-placement-layout > .respiratory-bank,
+  .summary-placement-layout > .assessment-bank,
+  .dispatch-placement-layout > .dispatch-bank {
+    position: static;
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .summary-placement-layout .assessment-labels,
+  .assessment-layout .assessment-labels,
+  .respiratory-placement-layout .respiratory-labels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ecg-layout .ecg-option { display: flex; }
+}

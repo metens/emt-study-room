@@ -114,20 +114,20 @@ function renderChapterSummary(summary, focusId) {
   panel.innerHTML = `
     <h2>${title}</h2>
     <p>Drag each phrase into its blank, or select a phrase and then a blank. Select a filled blank to return its phrase to the bank.</p>
-    <section class="assessment-bank" aria-label="Summary answer bank">
+    <div class="summary-placement-layout"><section class="assessment-bank" aria-label="Summary answer bank">
       <h3>Answer bank</h3>
       <div class="assessment-labels">${order.map(i => `
         <button type="button" data-word="${i}" class="assessment-label ${selected === i ? 'picked' : ''}"
           draggable="${!assigned.includes(i)}" aria-pressed="${selected === i}"
           ${assigned.includes(i) ? 'disabled' : ''}>${esc(words[i])}</button>`).join('')}</div>
     </section>
-    <div style="margin:1rem 0">${lines.map(parts => `<p style="line-height:2">${parts.map(part => {
+    <div class="summary-answer-text" style="margin:1rem 0">${lines.map(parts => `<p style="line-height:2">${parts.map(part => {
       if (typeof part === 'string') return esc(part);
       const phrase = words[placed[part]];
       const result = checked ? (placed[part] === part ? 'Correct' : phrase ? 'Try again' : 'Empty') : '';
       return `<button type="button" data-blank="${part}" style="vertical-align:baseline;white-space:normal;text-align:left"
         aria-label="Blank ${part + 1}${phrase ? ', ' + esc(phrase) : ''}${result ? ', ' + result : ''}">${phrase ? esc(phrase) : 'Blank ' + (part + 1)}${result ? ' · ' + result : ''}</button>`;
-    }).join('')}</p>`).join('')}</div>
+    }).join('')}</p>`).join('')}</div></div>
     <div class="assessment-actions">
       <button type="button" class="primary" data-check>Check summary</button>
       <button type="button" data-reset>Reset &amp; shuffle</button>
